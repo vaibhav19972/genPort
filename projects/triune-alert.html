@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="TRIUNE Alert — A high-security, safety-focused mobile application with encrypted emergency communication, real-time location streaming, and biometric authentication.">
+  <title>TRIUNE Alert — DevPort</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    .project-hero { min-height: 60vh; display: flex; align-items: center; padding-top: calc(var(--nav-height) + 40px); }
+    .project-hero__container { max-width: 900px; margin: 0 auto; padding: 40px 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+    .project-hero__img { border-radius: 20px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.4); border: 1px solid var(--glass-border); }
+    .project-hero__img img { width: 100%; display: block; }
+    .project-hero__back { display: inline-flex; align-items: center; gap: 8px; font-size: 0.85rem; color: var(--accent); margin-bottom: 20px; font-weight: 500; transition: transform 0.3s; }
+    .project-hero__back:hover { transform: translateX(-4px); }
+    .project-hero__tags { display: flex; gap: 6px; margin-bottom: 16px; }
+    .project-hero__title { font-size: clamp(1.6rem, 4vw, 2.2rem); font-weight: 800; margin-bottom: 12px; line-height: 1.2; }
+    .project-hero__desc { font-size: 0.92rem; color: var(--text-secondary); line-height: 1.7; }
+
+    .project-details { max-width: 900px; margin: 0 auto; padding: 0 24px 100px; }
+    .project-section { margin-bottom: 48px; }
+    .project-section h2 { font-size: 1.3rem; font-weight: 700; margin-bottom: 16px; }
+    .project-section p, .project-section li { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.7; }
+    .project-section ul { padding-left: 0; }
+    .project-section li { padding-left: 18px; position: relative; margin-bottom: 10px; }
+    .project-section li::before { content: ''; position: absolute; left: 0; top: 9px; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+
+    .tech-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
+    .tech-item { padding: 18px; border-radius: 14px; }
+    .tech-item h4 { font-size: 0.9rem; font-weight: 600; margin-bottom: 4px; }
+    .tech-item p { font-size: 0.78rem; color: var(--text-secondary); }
+
+    @media (max-width: 768px) {
+      .project-hero__container { grid-template-columns: 1fr; }
+      .project-hero__img { order: -1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+  <div class="scroll-progress" id="scrollProgress"></div>
+  <canvas id="particleCanvas"></canvas>
+  <div class="bg-orb bg-orb--1"></div>
+  <div class="bg-orb bg-orb--2"></div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav__container">
+      <a href="/" class="nav__logo">
+        <span class="nav__logo-icon">⬡</span>
+        <span class="nav__logo-text">DevPort</span>
+      </a>
+      <div class="nav__links" id="navLinks">
+        <a href="/" class="nav__link">Home</a>
+        <a href="/#experience" class="nav__link">Experience</a>
+        <a href="/#projects" class="nav__link active">Projects</a>
+        <a href="/#contact" class="nav__link">Contact</a>
+      </div>
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Project Hero -->
+  <section class="project-hero">
+    <div class="project-hero__container">
+      <div>
+        <a href="/" class="project-hero__back reveal">← Back to Portfolio</a>
+        <div class="project-hero__tags reveal">
+          <span class="tag tag--accent">iOS / Swift</span>
+          <span class="tag">Security</span>
+          <span class="tag">Location</span>
+        </div>
+        <h1 class="project-hero__title reveal">TRIUNE <span class="gradient-text">Alert</span></h1>
+        <p class="project-hero__desc reveal">A high-security personal safety application featuring encrypted emergency communication, real-time location streaming to trusted contacts, and multi-factor biometric authentication — designed for scenarios where every second counts.</p>
+      </div>
+      <div class="project-hero__img reveal">
+        <img src="/assets/triune-app.png" alt="TRIUNE Alert App Screenshot">
+      </div>
+    </div>
+  </section>
+
+  <!-- Details -->
+  <div class="project-details">
+    <div class="project-section reveal">
+      <h2>The <span class="gradient-text">Challenge</span></h2>
+      <p>Existing safety apps suffer from slow activation, unreliable location sharing, and poor encryption. TRIUNE Alert was designed from the ground up to solve these issues: a single press-and-hold SOS activates an encrypted emergency broadcast to pre-configured contacts in under 1.5 seconds, even on a locked device, with continuous location streaming that works across cellular fallback scenarios.</p>
+    </div>
+
+    <div class="project-section reveal">
+      <h2>Key <span class="gradient-text">Features</span></h2>
+      <ul>
+        <li><strong>One-Touch SOS Activation:</strong> Long-press gesture from lock screen or app triggers emergency sequence — alert dispatch, location stream, audio recording — in under 1.5 seconds.</li>
+        <li><strong>End-to-End Encrypted Communication:</strong> All emergency data (location, audio, messages) encrypted with AES-256 and exchanged via certificate-pinned TLS channels. Zero-knowledge server architecture.</li>
+        <li><strong>Live Location Broadcasting:</strong> Continuous GPS streaming with 3-second update intervals, including altitude, speed, and heading. Automatic cellular/Wi-Fi fallback with offline caching.</li>
+        <li><strong>Biometric Guard:</strong> Configurable multi-factor authentication using Face ID, Touch ID, and device passcode. Silent alarm mode with decoy UI for duress scenarios.</li>
+        <li><strong>Emergency Contact Network:</strong> Pre-configured contact trees with role-based escalation (primary → secondary → authorities) and delivery confirmation with read receipts.</li>
+        <li><strong>Safety Map Integration:</strong> Historical incident heatmap overlay using anonymized crowd-sourced data. Geofencing alerts for entering high-risk areas.</li>
+        <li><strong>Offline Resilience:</strong> Full offline functionality with local data caching and automatic sync when connectivity is restored. SMS fallback for critical alerts.</li>
+      </ul>
+    </div>
+
+    <div class="project-section reveal">
+      <h2>Tech <span class="gradient-text">Stack</span></h2>
+      <div class="tech-grid">
+        <div class="tech-item glass-card">
+          <h4>SwiftUI + UIKit</h4>
+          <p>Hybrid UI with lock-screen extension</p>
+        </div>
+        <div class="tech-item glass-card">
+          <h4>Core Location</h4>
+          <p>High-accuracy GPS with background modes</p>
+        </div>
+        <div class="tech-item glass-card">
+          <h4>CryptoKit / AES-256</h4>
+          <p>End-to-end encryption for all data</p>
+        </div>
+        <div class="tech-item glass-card">
+          <h4>MapKit + Geofencing</h4>
+          <p>Safety maps and boundary alerts</p>
+        </div>
+        <div class="tech-item glass-card">
+          <h4>LocalAuthentication</h4>
+          <p>Face ID / Touch ID biometric guard</p>
+        </div>
+        <div class="tech-item glass-card">
+          <h4>WebSocket + Fallback</h4>
+          <p>Real-time streaming with SMS backup</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-section reveal" style="text-align: center; padding-top: 24px;">
+      <a href="/" class="hero__cta magnetic" style="display: inline-flex;">
+        <span>← Back to Portfolio</span>
+        <div class="hero__cta-glow"></div>
+      </a>
+    </div>
+  </div>
+
+  <script type="module" src="/main.js"></script>
+</body>
+</html>

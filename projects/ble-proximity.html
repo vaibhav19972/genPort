@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="BLE Proximity — A real-time proximity dating application utilizing Bluetooth Low Energy for accurate distance measurement and trigger systems.">
+  <title>BLE Proximity App — DevPort</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    /* Page-specific overrides for project detail */
+    .project-hero { min-height: 60vh; display: flex; align-items: center; padding-top: calc(var(--nav-height) + 40px); }
+    .project-hero__container { max-width: 900px; margin: 0 auto; padding: 40px 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+    .project-hero__img { border-radius: 20px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.4); border: 1px solid var(--glass-border); }
+    .project-hero__img img { width: 100%; display: block; }
+    .project-hero__back { display: inline-flex; align-items: center; gap: 8px; font-size: 0.85rem; color: var(--accent); margin-bottom: 20px; font-weight: 500; transition: transform 0.3s; }
+    .project-hero__back:hover { transform: translateX(-4px); }
+    .project-hero__tags { display: flex; gap: 6px; margin-bottom: 16px; }
+    .project-hero__title { font-size: clamp(1.6rem, 4vw, 2.2rem); font-weight: 800; margin-bottom: 12px; line-height: 1.2; }
+    .project-hero__desc { font-size: 0.92rem; color: var(--text-secondary); line-height: 1.7; }
+
+    .project-details { max-width: 900px; margin: 0 auto; padding: 0 24px 100px; }
+    .project-section { margin-bottom: 48px; }
+    .project-section h2 { font-size: 1.3rem; font-weight: 700; margin-bottom: 16px; letter-spacing: -0.01em; }
+    .project-section p, .project-section li { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.7; }
+    .project-section ul { padding-left: 0; }
+    .project-section li { padding-left: 18px; position: relative; margin-bottom: 10px; }
+    .project-section li::before { content: ''; position: absolute; left: 0; top: 9px; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+
+    .tech-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
+    .tech-item { padding: 18px; border-radius: 14px; }
+    .tech-item h4 { font-size: 0.9rem; font-weight: 600; margin-bottom: 4px; }
+    .tech-item p { font-size: 0.78rem; color: var(--text-secondary); }
+
+    @media (max-width: 768px) {
+      .project-hero__container { grid-template-columns: 1fr; }
+      .project-hero__img { order: -1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+  <div class="scroll-progress" id="scrollProgress"></div>
+  <canvas id="particleCanvas"></canvas>
+  <div class="bg-orb bg-orb--1"></div>
+  <div class="bg-orb bg-orb--2"></div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav__container">
+      <a href="/" class="nav__logo">
+        <span class="nav__logo-icon">⬡</span>
+        <span class="nav__logo-text">DevPort</span>
+      </a>
+      <div class="nav__links" id="navLinks">
+        <a href="/" class="nav__link">Home</a>
+        <a href="/#experience" class="nav__link">Experience</a>
+        <a href="/#projects" class="nav__link active">Projects</a>
+        <a href="/#contact" class="nav__link">Contact</a>
+      </div>
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Project Hero -->
+  <section class="project-hero">
+    <div class="project-hero__container">
+      <div>
+        <a href="/" class="project-hero__back reveal">← Back to Portfolio</a>
+        <div class="project-hero__tags reveal">
+          <span class="tag tag--accent">iOS / Swift</span>
+          <span class="tag">BLE</span>
+          <span class="tag">CoreBluetooth</span>
+        </div>
+        <h1 class="project-hero__title reveal">Real-time BLE <span class="gradient-text">Proximity</span> App</h1>
+        <p class="project-hero__desc reveal">A proximity-based dating application that leverages Bluetooth Low Energy (BLE) for real-time distance measurement, automated matching triggers, and secure nearby user discovery — all without relying on GPS in indoor environments.</p>
+      </div>
+      <div class="project-hero__img reveal">
+        <img src="/assets/ble-app.png" alt="BLE Proximity App Screenshot">
+      </div>
+    </div>
+  </section>
+
+  <!-- Details -->
+  <div class="project-details">
+    <div class="project-section reveal">
+      <h2>The <span class="gradient-text">Challenge</span></h2>
+      <p>Traditional dating apps rely on GPS for proximity, which is inaccurate indoors and drains battery. The goal was to build a system that detects nearby users within a configurable radius (5m–200m) using BLE signal strength (RSSI), enabling hyper-local, real-time matching in venues like cafés, events, and campuses — with minimal power consumption.</p>
+    </div>
+
+    <div class="project-section reveal">
+      <h2>Key <span class="gradient-text">Features</span></h2>
+      <ul>
+        <li><strong>BLE Radar Interface:</strong> A real-time radar-style UI showing nearby users as pulsing dots with live distance indicators updated every 2 seconds.</li>
+        <li><strong>RSSI-to-Distance Calibration:</strong> Custom signal propagation model with Kalman filtering for accurate indoor distance estimation from BLE advertisement packets.</li>
+        <li><strong>Automated Proximity Triggers:</strong> Configurable distance thresholds that automatically trigger match notifications and profile reveals when two users are within range.</li>
+        <li><strong>Privacy-First Architecture:</strong> Randomized BLE advertising UUIDs rotated every 15 minutes. No persistent identifiers broadcast. All profile data exchanged via encrypted server-side channels.</li>
+        <li><strong>Background Scanning:</strong> Efficient CoreBluetooth background mode implementation with state restoration, maintaining detection capability while the app is backgrounded.</li>
+        <li><strong>Battery Optimization:</strong> Adaptive scan intervals (1s foreground, 5s background) and smart duty-cycling that reduces BLE power consumption by 60% compared to continuous scanning.</li>
+      </ul>
+    </div>
+
+    <div class="project-section reveal">
+      <h2>Tech <span class="gradient-text">Stack</span></h2>
+      <div class="tech-grid">
+        <div class="tech-item glass-card">
+          <h4>CoreBluetooth</h4>
+          <p>BLE peripheral/central role management</p>
+        </div>
+        <div class="tech-item glass-card">
+          <h4>SwiftUI + Combine</h4>
+          <p>Reactive UI with real-time data streams</p>
+        </div>
+        <div class="tech-item glass-card">
+          <h4>Kalman Filter</h4>
+          <p>Signal smoothing for distance estimation</p>
+        </div>
+        <div class="tech-item glass-card">
+          <h4>CloudKit</h4>
+          <p>Secure profile sync and match storage</p>
+        </div>
+        <div class="tech-item glass-card">
+          <h4>Core Animation</h4>
+          <p>Radar sweep and proximity animations</p>
+        </div>
+        <div class="tech-item glass-card">
+          <h4>Keychain Services</h4>
+          <p>Encrypted credential and token storage</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-section reveal" style="text-align: center; padding-top: 24px;">
+      <a href="/" class="hero__cta magnetic" style="display: inline-flex;">
+        <span>← Back to Portfolio</span>
+        <div class="hero__cta-glow"></div>
+      </a>
+    </div>
+  </div>
+
+  <script type="module" src="/main.js"></script>
+</body>
+</html>
