@@ -367,22 +367,61 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 });
 
 // ──────────────────────────────────────────────
-// 13. CONTACT FORM
+// 13. CONTACT FORM — WhatsApp + Mail Integration
 // ──────────────────────────────────────────────
+const emailFallback = document.getElementById('emailFallback');
+
+function getFormData() {
+  const name = contactForm?.querySelector('#fullName')?.value.trim() || '';
+  const email = contactForm?.querySelector('#email')?.value.trim() || '';
+  const category = contactForm?.querySelector('#category')?.value || '';
+  const message = contactForm?.querySelector('#message')?.value.trim() || '';
+  return { name, email, category, message };
+}
+
+function buildWhatsAppURL({ name, email, category, message }) {
+  const waText =
+    `👋 Hi Vaibhav!\n\n` +
+    `*Name:* ${name}\n` +
+    `*Email:* ${email}\n` +
+    `*Category:* ${category || 'Not specified'}\n\n` +
+    `*Message:*\n${message}`;
+  return `https://wa.me/917000530821?text=${encodeURIComponent(waText)}`;
+}
+
+function buildMailtoURL({ name, email, category, message }) {
+  const subject = `Portfolio Enquiry — ${category || 'General'}`;
+  const body =
+    `Hi Vaibhav,\n\n` +
+    `Name: ${name}\nEmail: ${email}\nCategory: ${category || 'Not specified'}\n\n` +
+    `Message:\n${message}`;
+  return `mailto:raikwar.vaibhav95@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
+
 if (contactForm) {
   contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
+    const data = getFormData();
+    window.open(buildWhatsAppURL(data), '_blank');
+
     const btn = contactForm.querySelector('.contact__submit');
     const originalText = btn.innerHTML;
-
-    btn.innerHTML = '<span>✓ Message Sent!</span>';
+    btn.innerHTML = '<span>✓ Opening WhatsApp…</span>';
     btn.style.background = 'linear-gradient(135deg, #28c840, #00b36b)';
 
     setTimeout(() => {
       btn.innerHTML = originalText;
       btn.style.background = '';
       contactForm.reset();
-    }, 2500);
+    }, 3000);
+  });
+}
+
+if (emailFallback) {
+  emailFallback.addEventListener('click', (e) => {
+    e.preventDefault();
+    const data = getFormData();
+    window.location.href = buildMailtoURL(data);
   });
 }
 

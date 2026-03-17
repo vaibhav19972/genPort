@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Nykaa Fashion — Contributed to product discovery, shopping experiences, and user engagement flows for the Nykaa Fashion iOS application.">
+  <title>Nykaa Fashion — DevPort</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    .project-hero { min-height: 60vh; display: flex; align-items: center; padding-top: calc(var(--nav-height) + 40px); }
+    .project-hero__container { max-width: 900px; margin: 0 auto; padding: 40px 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+    .project-hero__img { border-radius: 20px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.4); border: 1px solid var(--glass-border); }
+    .project-hero__img img { width: 100%; display: block; }
+    .project-hero__back { display: inline-flex; align-items: center; gap: 8px; font-size: 0.85rem; color: var(--accent); margin-bottom: 20px; font-weight: 500; transition: transform 0.3s; }
+    .project-hero__back:hover { transform: translateX(-4px); }
+    .project-hero__tags { display: flex; gap: 6px; margin-bottom: 16px; }
+    .project-hero__title { font-size: clamp(1.6rem, 4vw, 2.2rem); font-weight: 800; margin-bottom: 12px; line-height: 1.2; }
+    .project-hero__desc { font-size: 0.92rem; color: var(--text-secondary); line-height: 1.7; }
+    .project-details { max-width: 900px; margin: 0 auto; padding: 0 24px 100px; }
+    .project-section { margin-bottom: 48px; }
+    .project-section h2 { font-size: 1.3rem; font-weight: 700; margin-bottom: 16px; letter-spacing: -0.01em; }
+    .project-section p, .project-section li { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.7; }
+    .project-section ul { padding-left: 0; }
+    .project-section li { padding-left: 18px; position: relative; margin-bottom: 10px; }
+    .project-section li::before { content: ''; position: absolute; left: 0; top: 9px; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+    .tech-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
+    .tech-item { padding: 18px; border-radius: 14px; }
+    .tech-item h4 { font-size: 0.9rem; font-weight: 600; margin-bottom: 4px; }
+    .tech-item p { font-size: 0.78rem; color: var(--text-secondary); }
+    @media (max-width: 768px) {
+      .project-hero__container { grid-template-columns: 1fr; }
+      .project-hero__img { order: -1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+  <div class="scroll-progress" id="scrollProgress"></div>
+  <canvas id="particleCanvas"></canvas>
+  <div class="bg-orb bg-orb--1"></div>
+  <div class="bg-orb bg-orb--2"></div>
+
+  <nav class="nav" id="nav">
+    <div class="nav__container">
+      <a href="/" class="nav__logo">
+        <span class="nav__logo-icon">⬡</span>
+        <span class="nav__logo-text">DevPort</span>
+      </a>
+      <div class="nav__links" id="navLinks">
+        <a href="/" class="nav__link">Home</a>
+        <a href="/#experience" class="nav__link">Experience</a>
+        <a href="/#projects" class="nav__link active">Projects</a>
+        <a href="/#contact" class="nav__link">Contact</a>
+      </div>
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <section class="project-hero">
+    <div class="project-hero__container">
+      <div>
+        <a href="/" class="project-hero__back reveal">← Back to Portfolio</a>
+        <div class="project-hero__tags reveal">
+          <span class="tag tag--accent">iOS / Swift</span>
+          <span class="tag">E-Commerce</span>
+          <span class="tag">Fashion</span>
+        </div>
+        <h1 class="project-hero__title reveal">Nykaa <span class="gradient-text">Fashion</span></h1>
+        <p class="project-hero__desc reveal">Contributed to the core shopping experiences, product discovery, and user engagement flows for the Nykaa Fashion iOS application — a premium fashion e-commerce platform offering curated collections, style recommendations, and seamless checkout experiences.</p>
+      </div>
+      <div class="project-hero__img reveal">
+        <img src="/assets/nykaa-fashion.png" alt="Nykaa Fashion App Screenshot">
+      </div>
+    </div>
+  </section>
+
+  <div class="project-details">
+    <div class="project-section reveal">
+      <h2>The <span class="gradient-text">Challenge</span></h2>
+      <p>The fashion e-commerce space demands a visually rich, performant, and highly personalized mobile experience. The challenge was to build and optimize product discovery flows, curated collections, and recommendation engines that keep users engaged — while ensuring smooth performance with image-heavy pages and complex filtering systems.</p>
+    </div>
+
+    <div class="project-section reveal">
+      <h2>Key <span class="gradient-text">Contributions</span></h2>
+      <ul>
+        <li><strong>Product Discovery:</strong> Built intelligent product browsing experiences with advanced filtering, sorting, and category navigation for a large fashion catalog.</li>
+        <li><strong>Shopping Experience:</strong> Developed core shopping flows including product detail views, size guides, wishlists, and add-to-cart interactions.</li>
+        <li><strong>User Engagement:</strong> Implemented personalization features including style recommendations, recently viewed items, and curated outfit suggestions.</li>
+        <li><strong>Performance Optimization:</strong> Optimized image-heavy pages with lazy loading, caching strategies, and efficient collection view rendering for smooth scrolling.</li>
+        <li><strong>Checkout Flow:</strong> Contributed to the streamlined checkout experience with address management, payment integration, and order tracking.</li>
+      </ul>
+    </div>
+
+    <div class="project-section reveal">
+      <h2>Tech <span class="gradient-text">Stack</span></h2>
+      <div class="tech-grid">
+        <div class="tech-item glass-card">
+          <h4>Swift</h4>
+          <p>Primary development language</p>
+        </div>
+        <div class="tech-item glass-card">
+          <h4>UIKit</h4>
+          <p>Complex collection views and animations</p>
+        </div>
+        <div class="tech-item glass-card">
+          <h4>REST APIs</h4>
+          <p>Product catalog and user data services</p>
+        </div>
+        <div class="tech-item glass-card">
+          <h4>SDWebImage</h4>
+          <p>Efficient image loading and caching</p>
+        </div>
+        <div class="tech-item glass-card">
+          <h4>Firebase</h4>
+          <p>Analytics, push notifications, remote config</p>
+        </div>
+        <div class="tech-item glass-card">
+          <h4>Core Animation</h4>
+          <p>Smooth transitions and micro-interactions</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-section reveal" style="text-align: center; padding-top: 24px;">
+      <a href="/" class="hero__cta magnetic" style="display: inline-flex;">
+        <span>← Back to Portfolio</span>
+        <div class="hero__cta-glow"></div>
+      </a>
+    </div>
+  </div>
+
+  <script type="module" src="/main.js"></script>
+</body>
+</html>
