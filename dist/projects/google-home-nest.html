@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Google Home & Nest — Contributed to the Google Home iOS application with 100M+ downloads, optimizing device setup flows for Nest and Chromecast.">
+  <title>Google Home & Nest — DevPort</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    .project-hero { min-height: 60vh; display: flex; align-items: center; padding-top: calc(var(--nav-height) + 40px); }
+    .project-hero__container { max-width: 900px; margin: 0 auto; padding: 40px 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+    .project-hero__img { border-radius: 20px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.4); border: 1px solid var(--glass-border); }
+    .project-hero__img img { width: 100%; display: block; }
+    .project-hero__back { display: inline-flex; align-items: center; gap: 8px; font-size: 0.85rem; color: var(--accent); margin-bottom: 20px; font-weight: 500; transition: transform 0.3s; }
+    .project-hero__back:hover { transform: translateX(-4px); }
+    .project-hero__tags { display: flex; gap: 6px; margin-bottom: 16px; }
+    .project-hero__title { font-size: clamp(1.6rem, 4vw, 2.2rem); font-weight: 800; margin-bottom: 12px; line-height: 1.2; }
+    .project-hero__desc { font-size: 0.92rem; color: var(--text-secondary); line-height: 1.7; }
+    .project-details { max-width: 900px; margin: 0 auto; padding: 0 24px 100px; }
+    .project-section { margin-bottom: 48px; }
+    .project-section h2 { font-size: 1.3rem; font-weight: 700; margin-bottom: 16px; letter-spacing: -0.01em; }
+    .project-section p, .project-section li { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.7; }
+    .project-section ul { padding-left: 0; }
+    .project-section li { padding-left: 18px; position: relative; margin-bottom: 10px; }
+    .project-section li::before { content: ''; position: absolute; left: 0; top: 9px; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+    .tech-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
+    .tech-item { padding: 18px; border-radius: 14px; }
+    .tech-item h4 { font-size: 0.9rem; font-weight: 600; margin-bottom: 4px; }
+    .tech-item p { font-size: 0.78rem; color: var(--text-secondary); }
+    @media (max-width: 768px) {
+      .project-hero__container { grid-template-columns: 1fr; }
+      .project-hero__img { order: -1; }
+    }
+  </style>
+  <script type="module" crossorigin src="/assets/main-db65fc75.js"></script>
+  <link rel="stylesheet" href="/assets/main-11b0fb4f.css">
+</head>
+<body>
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+  <div class="scroll-progress" id="scrollProgress"></div>
+  <canvas id="particleCanvas"></canvas>
+  <div class="bg-orb bg-orb--1"></div>
+  <div class="bg-orb bg-orb--2"></div>
+
+  <nav class="nav" id="nav">
+    <div class="nav__container">
+      <a href="/" class="nav__logo">
+        <span class="nav__logo-icon">⬡</span>
+        <span class="nav__logo-text">DevPort</span>
+      </a>
+      <div class="nav__links" id="navLinks">
+        <a href="/" class="nav__link">Home</a>
+        <a href="/#experience" class="nav__link">Experience</a>
+        <a href="/#projects" class="nav__link active">Projects</a>
+        <a href="/#contact" class="nav__link">Contact</a>
+      </div>
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <section class="project-hero">
+    <div class="project-hero__container">
+      <div>
+        <a href="/" class="project-hero__back reveal">← Back to Portfolio</a>
+        <div class="project-hero__tags reveal">
+          <span class="tag tag--accent">iOS / Swift</span>
+          <span class="tag">IoT</span>
+          <span class="tag">Smart Home</span>
+        </div>
+        <h1 class="project-hero__title reveal">Google Home &amp; <span class="gradient-text">Nest</span></h1>
+        <p class="project-hero__desc reveal">Contributed to the Google Home iOS application — a flagship smart home platform with over 100 million downloads. Delivered 30+ user-facing features, optimized device setup flows for Nest thermostats and Chromecast, and improved application performance by reducing feature response time by 20%.</p>
+      </div>
+      <div class="project-hero__img reveal">
+        <img src="/assets/google-home-e0c861a3.png" alt="Google Home & Nest App Screenshot">
+      </div>
+    </div>
+  </section>
+
+  <div class="project-details">
+    <div class="project-section reveal">
+      <h2>The <span class="gradient-text">Challenge</span></h2>
+      <p>The Google Home app serves as the central hub for millions of IoT devices worldwide. The challenge was to maintain and enhance a massive, legacy codebase while delivering new features at scale — ensuring seamless device onboarding for Nest thermostats, Chromecast, and other smart home devices with zero friction for users.</p>
+    </div>
+
+    <div class="project-section reveal">
+      <h2>Key <span class="gradient-text">Contributions</span></h2>
+      <ul>
+        <li><strong>30+ Feature Deliveries:</strong> Shipped over 30 user-facing features spanning device setup, home automation routines, and device management screens.</li>
+        <li><strong>Nest & Chromecast Setup Optimization:</strong> Re-engineered the device onboarding flows reducing setup failure rates and improving first-time success metrics.</li>
+        <li><strong>Performance Optimization:</strong> Identified and resolved performance bottlenecks, reducing feature response time by 20% through profiling and caching strategies.</li>
+        <li><strong>MVVM & MVC Architecture:</strong> Worked within both architectural patterns across different modules, maintaining consistency across the codebase.</li>
+        <li><strong>Cross-Team Collaboration:</strong> Collaborated with Google's internal teams on API integrations, ensuring alignment between iOS and backend services.</li>
+      </ul>
+    </div>
+
+    <div class="project-section reveal">
+      <h2>Tech <span class="gradient-text">Stack</span></h2>
+      <div class="tech-grid">
+        <div class="tech-item glass-card">
+          <h4>Swift & Objective-C</h4>
+          <p>Mixed codebase with modern Swift and legacy ObjC</p>
+        </div>
+        <div class="tech-item glass-card">
+          <h4>MVVM / MVC</h4>
+          <p>Dual architectural patterns across modules</p>
+        </div>
+        <div class="tech-item glass-card">
+          <h4>IoT Protocols</h4>
+          <p>Bluetooth, Wi-Fi provisioning, Matter protocol</p>
+        </div>
+        <div class="tech-item glass-card">
+          <h4>Firebase</h4>
+          <p>Analytics, remote config, and crash reporting</p>
+        </div>
+        <div class="tech-item glass-card">
+          <h4>CI/CD</h4>
+          <p>Google's internal build and testing pipelines</p>
+        </div>
+        <div class="tech-item glass-card">
+          <h4>Instruments</h4>
+          <p>Performance profiling and memory optimization</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-section reveal" style="text-align: center; padding-top: 24px;">
+      <a href="/" class="hero__cta magnetic" style="display: inline-flex;">
+        <span>← Back to Portfolio</span>
+        <div class="hero__cta-glow"></div>
+      </a>
+    </div>
+  </div>
+
+  
+</body>
+</html>

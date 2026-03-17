@@ -214,7 +214,12 @@ tiltCards.forEach((card) => {
   });
 
   card.addEventListener('mouseleave', () => {
+    card.style.transition = 'transform 0.5s ease';
     card.style.transform = 'perspective(800px) rotateX(0) rotateY(0) scale(1)';
+  });
+
+  card.addEventListener('mouseenter', () => {
+    card.style.transition = 'none';
   });
 });
 

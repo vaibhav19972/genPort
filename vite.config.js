@@ -6,8 +6,12 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
-        bleProximity: resolve(__dirname, 'projects/ble-proximity.html'),
-        triuneAlert: resolve(__dirname, 'projects/triune-alert.html'),
+        googleHomeNest: resolve(__dirname, 'projects/google-home-nest.html'),
+        inpharmd: resolve(__dirname, 'projects/inpharmd.html'),
+        punch: resolve(__dirname, 'projects/punch.html'),
+        nykaa: resolve(__dirname, 'projects/nykaa.html'),
+        nykaaFashion: resolve(__dirname, 'projects/nykaa-fashion.html'),
+        coachable: resolve(__dirname, 'projects/coachable.html'),
       },
     },
   },
