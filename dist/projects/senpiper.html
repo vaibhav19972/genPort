@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Punch (Market Pulse) — A single-screen F&O and stock trading mobile application built with Kotlin Multiplatform across iOS and Android.">
-  <title>Punch (Market Pulse) — DevPort</title>
+  <meta name="description" content="Senpiper (One Resource) — Sole mobile lead for a multi-tenant low-code platform. Designed a KMP V2 form-schema architecture and built the Beat police-department app from scratch.">
+  <title>Senpiper (One Resource) — DevPort</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -70,14 +70,15 @@
         <a href="/" class="project-hero__back reveal">← Back to Portfolio</a>
         <div class="project-hero__tags reveal">
           <span class="tag tag--accent">KMP / Kotlin</span>
-          <span class="tag">Trading</span>
-          <span class="tag">iOS & Android</span>
+          <span class="tag">Low-Code</span>
+          <span class="tag">iOS / Android</span>
+          <span class="tag">AI / Agentic</span>
         </div>
-        <h1 class="project-hero__title reveal">Punch <span class="gradient-text">(Market Pulse)</span></h1>
-        <p class="project-hero__desc reveal">Drove development of a single-screen Futures & Options and stock trading mobile application across iOS and Android at Punch Trade. Architected KMP / KMM solutions enabling shared business logic, designed a KMP SDK for onboarding and KYC, and built a custom widget framework for real-time market data.</p>
+        <h1 class="project-hero__title reveal">Senpiper <span class="gradient-text">(One Resource)</span></h1>
+        <p class="project-hero__desc reveal">Sole mobile lead for the iOS and Android apps of One Resource, Senpiper's multi-tenant low-code platform for forms, workflows, and business process automation used by government, consulting, and banking clients.</p>
       </div>
       <div class="project-hero__img reveal">
-        <img src="/assets/punch-6d595ee1.png" alt="Punch Trading App Screenshot">
+        <img src="/assets/senpiper-779db671.svg" alt="Senpiper One Resource App Screenshot">
       </div>
     </div>
   </section>
@@ -85,17 +86,21 @@
   <div class="project-details">
     <div class="project-section reveal">
       <h2>The <span class="gradient-text">Challenge</span></h2>
-      <p>Building a feature-rich trading platform that works seamlessly on both iOS and Android requires a strategy that maximizes code reuse without sacrificing native performance. The single-screen trading experience demanded real-time data streaming, low-latency order execution, and pixel-perfect UI across both platforms.</p>
+      <p>One Resource serves demanding enterprise clients across government, consulting, and banking. The original codebases would not build locally, carried no knowledge-transfer handoff, and were riddled with workarounds, duplicated logic, and non-modular code. The form engine was driven by a deeply nested recursive JSON schema that bundled styling, dependent keys, and workflow definitions together — forcing per-client branches and parallel fixes on every platform change.</p>
     </div>
 
     <div class="project-section reveal">
       <h2>Key <span class="gradient-text">Contributions</span></h2>
       <ul>
-        <li><strong>KMP Architecture:</strong> Architected the Kotlin Multiplatform solution enabling 70%+ code sharing between iOS and Android for business logic, networking, and data layers.</li>
-        <li><strong>KMP SDK for Onboarding:</strong> Designed and built a cross-platform SDK handling user registration, KYC verification, and account activation flows.</li>
-        <li><strong>Custom Widget Framework:</strong> Built a modular widget system for displaying real-time stock tickers, order books, and portfolio summaries within the single-screen layout.</li>
-        <li><strong>A/B Testing Infrastructure:</strong> Implemented feature flag and A/B testing systems to optimize trading UX and conversion funnels.</li>
-        <li><strong>Real-Time Data Streaming:</strong> Integrated WebSocket-based live market feeds with efficient state management for instant price updates.</li>
+        <li><strong>Zero-KT Onboarding:</strong> Debugged build and environment issues with no knowledge-transfer sessions, studied the architecture from shared documentation, and got both apps running across simulators, emulators, and physical devices.</li>
+        <li><strong>KMP V2 Form Architecture:</strong> Designed a Kotlin Multiplatform architecture for the new V2 form schema, moving schema parsing, the form-rendering runtime, and core logic into a single shared layer with thin native UI on each platform.</li>
+        <li><strong>Codebase Unification:</strong> Audited fragmented code and drove a unification effort based on DRY and SOLID principles, eliminating workarounds and duplicated logic.</li>
+        <li><strong>Form Editing Workflow:</strong> Built the form editing workflow on both iOS and Android.</li>
+        <li><strong>Real-Time Filling Viewer:</strong> Built a live form-filling viewer that lets reviewers watch fields update in real time while a form is being completed.</li>
+        <li><strong>Beat (from scratch):</strong> Built a police-department app for managing officer beats, leave applications, and HR services on top of the low-code form engine, using feature flags to select Beat-specific flows so one engine serves a fully separate product.</li>
+        <li><strong>Multi-Tenant Customization:</strong> Redesigned the login flow, revamped the UI with a new design system and reusable token system, managed Firebase configurations per client, and customized fields, domains, slugs, and home pages per tenant.</li>
+        <li><strong>Agentic AI Workflows:</strong> Built Harness agentic workflows that orchestrate Claude, Codex, and Ollama (cloud + local frontier models), wiring multiple harnesses, managing tokens, and generating automated pipelines.</li>
+        <li><strong>AI-Driven Engineering:</strong> Authored orchestration methods directly from documentation to scaffold harnesses around work, keep context intact, and write ADRs to a file capturing key decisions for long-term, agent-less reuse across any AI tool and new GitHub repository.</li>
       </ul>
     </div>
 
@@ -104,27 +109,31 @@
       <div class="tech-grid">
         <div class="tech-item glass-card">
           <h4>Kotlin Multiplatform</h4>
-          <p>Shared business logic across iOS & Android</p>
+          <p>Shared schema parsing & form runtime</p>
         </div>
         <div class="tech-item glass-card">
-          <h4>Swift & SwiftUI</h4>
-          <p>Native iOS UI layer and platform APIs</p>
+          <h4>Swift / SwiftUI</h4>
+          <p>Thin native iOS UI layer</p>
         </div>
         <div class="tech-item glass-card">
-          <h4>Jetpack Compose</h4>
-          <p>Native Android UI with declarative patterns</p>
+          <h4>Kotlin / Compose</h4>
+          <p>Native Android UI layer</p>
         </div>
         <div class="tech-item glass-card">
-          <h4>WebSockets</h4>
-          <p>Real-time market data streaming</p>
+          <h4>Firebase</h4>
+          <p>Per-client config & analytics</p>
         </div>
         <div class="tech-item glass-card">
-          <h4>Ktor</h4>
-          <p>Cross-platform networking and API client</p>
+          <h4>Feature Flags</h4>
+          <p>Tenant-specific flows (Beat)</p>
         </div>
         <div class="tech-item glass-card">
-          <h4>SQLDelight</h4>
-          <p>Cross-platform local data persistence</p>
+          <h4>Low-Code Engine</h4>
+          <p>Forms, workflows, automation</p>
+        </div>
+        <div class="tech-item glass-card">
+          <h4>Harness Agentic AI</h4>
+          <p>Claude, Codex, Ollama orchestration</p>
         </div>
       </div>
     </div>

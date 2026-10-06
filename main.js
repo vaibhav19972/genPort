@@ -164,6 +164,7 @@ let isDeleting = false;
 let typingSpeed = 45;
 
 function typeEffect() {
+  if (!heroSubtitle) return;
   const current = typingStrings[stringIndex];
   const displayText = current.substring(0, charIndex);
 
@@ -186,7 +187,9 @@ function typeEffect() {
 
   setTimeout(typeEffect, typingSpeed);
 }
-typeEffect();
+if (heroSubtitle) {
+  typeEffect();
+}
 
 // ──────────────────────────────────────────────
 // 7. 3D TILT EFFECT ON CARDS

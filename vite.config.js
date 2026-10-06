@@ -6,6 +6,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
+        senpiper: resolve(__dirname, 'projects/senpiper.html'),
         googleHomeNest: resolve(__dirname, 'projects/google-home-nest.html'),
         inpharmd: resolve(__dirname, 'projects/inpharmd.html'),
         punch: resolve(__dirname, 'projects/punch.html'),
