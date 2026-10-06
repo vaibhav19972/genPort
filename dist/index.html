@@ -12,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet">
   
-  <script type="module" crossorigin src="/assets/main-db65fc75.js"></script>
+  <script type="module" crossorigin src="/assets/main-1fa28983.js"></script>
   <link rel="stylesheet" href="/assets/main-11b0fb4f.css">
 </head>
 
@@ -134,7 +134,7 @@
 
       <div class="hero__stats reveal">
         <div class="stat-card glass-card">
-          <span class="stat-card__number counter" data-target="4">0</span><span class="stat-card__plus">+</span>
+          <span class="stat-card__number counter" data-target="5">0</span><span class="stat-card__plus">+</span>
           <span class="stat-card__label">Years Exp.</span>
         </div>
         <div class="stat-card glass-card">
@@ -194,6 +194,18 @@
           <h3>Architecture</h3>
           <p>MVVM, VIPER, Clean, Modular</p>
         </div>
+        <div class="expertise__card glass-card reveal">
+          <div class="expertise__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="4" y="4" width="16" height="16" rx="2" ry="2" />
+              <line x1="9" y1="9" x2="15" y2="9" />
+              <line x1="9" y1="12" x2="15" y2="12" />
+              <line x1="9" y1="15" x2="13" y2="15" />
+            </svg>
+          </div>
+          <h3>AI &amp; Agentic Workflows</h3>
+          <p>Harness, Claude, Codex, Ollama</p>
+        </div>
       </div>
     </div>
   </section>
@@ -206,12 +218,36 @@
       </p>
 
       <div class="timeline">
+        <!-- Timeline item 0 -->
+        <div class="timeline__item reveal">
+          <div class="timeline__dot"></div>
+          <div class="timeline__content glass-card">
+            <div class="timeline__header">
+              <span class="timeline__date">Feb 2026 — Present</span>
+            </div>
+            <h3 class="timeline__role">Mobile Lead</h3>
+            <span class="timeline__company">Senpiper</span>
+            <p class="timeline__desc">Sole mobile lead for the iOS and Android apps of <strong>One Resource</strong>,
+              Senpiper's multi-tenant low-code platform for forms, workflows, and business process automation. Designed a
+              <strong>Kotlin Multiplatform</strong> architecture for the V2 form schema, unified fragmented codebases on
+              DRY/SOLID principles, and built <strong>Beat</strong> — a police-department app — from scratch on top of the
+              shared form engine.</p>
+            <div class="timeline__tags">
+              <span class="tag">KMP</span>
+              <span class="tag">iOS / Android</span>
+              <span class="tag">Low-Code</span>
+              <span class="tag">Firebase</span>
+              <span class="tag">AI / Agentic</span>
+            </div>
+          </div>
+        </div>
+
         <!-- Timeline item 1 -->
         <div class="timeline__item reveal">
           <div class="timeline__dot"></div>
           <div class="timeline__content glass-card">
             <div class="timeline__header">
-              <span class="timeline__date">Jun 2025 — Present</span>
+              <span class="timeline__date">Jun 2025 — Jan 2026</span>
             </div>
             <h3 class="timeline__role">iOS Developer</h3>
             <span class="timeline__company">Nykaa</span>
@@ -306,6 +342,28 @@
       <p class="section__subtitle reveal">High-impact applications built and shipped across industries.</p>
 
       <div class="projects__grid">
+        <!-- Project Card 0: Senpiper (One Resource) -->
+        <a href="/projects/senpiper.html" class="project-card glass-card tilt-card reveal" id="project-senpiper">
+          <div class="project-card__image">
+            <img src="/assets/senpiper-779db671.svg" alt="Senpiper One Resource App" loading="lazy">
+            <div class="project-card__overlay">
+              <span class="project-card__view">View Details →</span>
+            </div>
+          </div>
+          <div class="project-card__body">
+            <div class="project-card__tags">
+              <span class="tag tag--accent">KMP / Kotlin</span>
+              <span class="tag">Low-Code</span>
+            </div>
+            <h3 class="project-card__title">Senpiper (One Resource)</h3>
+            <p class="project-card__desc">Sole mobile lead on a multi-tenant low-code platform. Designed a KMP V2 form-schema architecture, unified fragmented codebases, and built the Beat police-department app from scratch.</p>
+            <div class="project-card__footer">
+              <span class="project-card__arrow">→</span>
+            </div>
+          </div>
+          <div class="project-card__glare"></div>
+        </a>
+
         <!-- Project Card 1: Google Home & Nest -->
         <a href="/projects/google-home-nest.html" class="project-card glass-card tilt-card reveal" id="project-google-home">
           <div class="project-card__image">

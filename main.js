@@ -152,9 +152,9 @@ function startCounter(el) {
 // 6. TYPING EFFECT
 // ──────────────────────────────────────────────
 const typingStrings = [
-  'Crafting Premium Native Experiences with Swift & Kotlin Multiplatform.',
-  'Building high-performance iOS apps for 100M+ users.',
-  'Designing cross-platform SDKs with KMP architecture.',
+  'Leading mobile teams with Swift & Kotlin Multiplatform.',
+  'Building cross-platform low-code platforms with KMP architecture.',
+  'Shipping high-performance iOS & Android apps for 100M+ users.',
   'Available for remote freelance & consulting engagements.',
 ];
 

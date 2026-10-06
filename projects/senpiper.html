@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Coachable — An athletic coaching platform with video analysis tools, coach-to-athlete feedback loops, and performance tracking on iOS.">
-  <title>Coachable — DevPort</title>
+  <meta name="description" content="Senpiper (One Resource) — Sole mobile lead for a multi-tenant low-code platform. Designed a KMP V2 form-schema architecture and built the Beat police-department app from scratch.">
+  <title>Senpiper (One Resource) — DevPort</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  
+  <link rel="stylesheet" href="/style.css">
   <style>
     .project-hero { min-height: 60vh; display: flex; align-items: center; padding-top: calc(var(--nav-height) + 40px); }
     .project-hero__container { max-width: 900px; margin: 0 auto; padding: 40px 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
@@ -35,8 +35,6 @@
       .project-hero__img { order: -1; }
     }
   </style>
-  <script type="module" crossorigin src="/assets/main-1fa28983.js"></script>
-  <link rel="stylesheet" href="/assets/main-11b0fb4f.css">
 </head>
 <body>
   <div class="cursor" id="cursor"></div>
@@ -69,15 +67,16 @@
       <div>
         <a href="/" class="project-hero__back reveal">← Back to Portfolio</a>
         <div class="project-hero__tags reveal">
-          <span class="tag tag--accent">iOS</span>
-          <span class="tag">Sports / EdTech</span>
-          <span class="tag">Video Analysis</span>
+          <span class="tag tag--accent">KMP / Kotlin</span>
+          <span class="tag">Low-Code</span>
+          <span class="tag">iOS / Android</span>
+          <span class="tag">AI / Agentic</span>
         </div>
-        <h1 class="project-hero__title reveal"><span class="gradient-text">Coachable</span></h1>
-        <p class="project-hero__desc reveal">Developed key features for an athletic coaching platform that enables coaches to provide structured feedback through video analysis, performance metrics, and training plans. Built tools that streamline communication between coaches and athletes for improved training outcomes.</p>
+        <h1 class="project-hero__title reveal">Senpiper <span class="gradient-text">(One Resource)</span></h1>
+        <p class="project-hero__desc reveal">Sole mobile lead for the iOS and Android apps of One Resource, Senpiper's multi-tenant low-code platform for forms, workflows, and business process automation used by government, consulting, and banking clients.</p>
       </div>
       <div class="project-hero__img reveal">
-        <img src="/assets/coachable-dd9b2245.png" alt="Coachable App Screenshot">
+        <img src="/assets/senpiper.svg" alt="Senpiper One Resource App Screenshot">
       </div>
     </div>
   </section>
@@ -85,17 +84,21 @@
   <div class="project-details">
     <div class="project-section reveal">
       <h2>The <span class="gradient-text">Challenge</span></h2>
-      <p>Coaching platforms require seamless video recording, upload, analysis, and annotation capabilities — combined with real-time communication and performance tracking. The challenge was to build a fluid experience that handles large video files efficiently while providing coaches with intuitive tools for frame-by-frame analysis and feedback.</p>
+      <p>One Resource serves demanding enterprise clients across government, consulting, and banking. The original codebases would not build locally, carried no knowledge-transfer handoff, and were riddled with workarounds, duplicated logic, and non-modular code. The form engine was driven by a deeply nested recursive JSON schema that bundled styling, dependent keys, and workflow definitions together — forcing per-client branches and parallel fixes on every platform change.</p>
     </div>
 
     <div class="project-section reveal">
       <h2>Key <span class="gradient-text">Contributions</span></h2>
       <ul>
-        <li><strong>Video Analysis Tools:</strong> Built video playback with frame-by-frame scrubbing, slow-motion controls, and annotation overlays for coaches to provide visual feedback.</li>
-        <li><strong>Coach-to-Athlete Feedback:</strong> Developed a structured feedback system with timestamped comments, drawings on video frames, and actionable recommendations.</li>
-        <li><strong>Performance Tracking:</strong> Implemented dashboards with progress charts, training metrics, and historical performance data visualization.</li>
-        <li><strong>Video Upload Pipeline:</strong> Created an efficient upload system with background processing, compression, and resume-capable uploads for large video files.</li>
-        <li><strong>Training Schedule:</strong> Built training plan management features allowing coaches to assign workouts, drills, and recovery sessions to athletes.</li>
+        <li><strong>Zero-KT Onboarding:</strong> Debugged build and environment issues with no knowledge-transfer sessions, studied the architecture from shared documentation, and got both apps running across simulators, emulators, and physical devices.</li>
+        <li><strong>KMP V2 Form Architecture:</strong> Designed a Kotlin Multiplatform architecture for the new V2 form schema, moving schema parsing, the form-rendering runtime, and core logic into a single shared layer with thin native UI on each platform.</li>
+        <li><strong>Codebase Unification:</strong> Audited fragmented code and drove a unification effort based on DRY and SOLID principles, eliminating workarounds and duplicated logic.</li>
+        <li><strong>Form Editing Workflow:</strong> Built the form editing workflow on both iOS and Android.</li>
+        <li><strong>Real-Time Filling Viewer:</strong> Built a live form-filling viewer that lets reviewers watch fields update in real time while a form is being completed.</li>
+        <li><strong>Beat (from scratch):</strong> Built a police-department app for managing officer beats, leave applications, and HR services on top of the low-code form engine, using feature flags to select Beat-specific flows so one engine serves a fully separate product.</li>
+        <li><strong>Multi-Tenant Customization:</strong> Redesigned the login flow, revamped the UI with a new design system and reusable token system, managed Firebase configurations per client, and customized fields, domains, slugs, and home pages per tenant.</li>
+        <li><strong>Agentic AI Workflows:</strong> Built Harness agentic workflows that orchestrate Claude, Codex, and Ollama (cloud + local frontier models), wiring multiple harnesses, managing tokens, and generating automated pipelines.</li>
+        <li><strong>AI-Driven Engineering:</strong> Authored orchestration methods directly from documentation to scaffold harnesses around work, keep context intact, and write ADRs to a file capturing key decisions for long-term, agent-less reuse across any AI tool and new GitHub repository.</li>
       </ul>
     </div>
 
@@ -103,28 +106,32 @@
       <h2>Tech <span class="gradient-text">Stack</span></h2>
       <div class="tech-grid">
         <div class="tech-item glass-card">
-          <h4>Swift</h4>
-          <p>Primary development language</p>
+          <h4>Kotlin Multiplatform</h4>
+          <p>Shared schema parsing & form runtime</p>
         </div>
         <div class="tech-item glass-card">
-          <h4>AVFoundation</h4>
-          <p>Video playback, recording, and processing</p>
+          <h4>Swift / SwiftUI</h4>
+          <p>Thin native iOS UI layer</p>
         </div>
         <div class="tech-item glass-card">
-          <h4>Core Graphics</h4>
-          <p>Drawing annotations on video frames</p>
+          <h4>Kotlin / Compose</h4>
+          <p>Native Android UI layer</p>
         </div>
         <div class="tech-item glass-card">
-          <h4>Charts</h4>
-          <p>Performance data visualization</p>
+          <h4>Firebase</h4>
+          <p>Per-client config & analytics</p>
         </div>
         <div class="tech-item glass-card">
-          <h4>URLSession</h4>
-          <p>Background uploads and downloads</p>
+          <h4>Feature Flags</h4>
+          <p>Tenant-specific flows (Beat)</p>
         </div>
         <div class="tech-item glass-card">
-          <h4>Push Notifications</h4>
-          <p>Real-time coaching alerts and reminders</p>
+          <h4>Low-Code Engine</h4>
+          <p>Forms, workflows, automation</p>
+        </div>
+        <div class="tech-item glass-card">
+          <h4>Harness Agentic AI</h4>
+          <p>Claude, Codex, Ollama orchestration</p>
         </div>
       </div>
     </div>
@@ -137,6 +144,6 @@
     </div>
   </div>
 
-  
+  <script type="module" src="/main.js"></script>
 </body>
 </html>
