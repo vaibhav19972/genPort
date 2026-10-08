@@ -1,6 +1,6 @@
 /* ============================================================
    genPort v2 — interactions
-   Terminal reveals, scroll-spy, mobile nav, contact relays.
+   Terminal reveals, scroll-spy, mobile nav, gallery lightbox.
    No custom cursor, no particles, no tilt, no rAF loops.
    ============================================================ */
 const $ = (s, c = document) => c.querySelector(s);
@@ -11,9 +11,13 @@ const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const navToggle = $('#navToggle');
 const navLinks = $('#navLinks');
 if (navToggle && navLinks) {
-  navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+  const setOpen = (open) => {
+    navLinks.classList.toggle('open', open);
+    navToggle.setAttribute('aria-expanded', String(open));
+  };
+  navToggle.addEventListener('click', () => setOpen(!navLinks.classList.contains('open')));
   $$('.nav__link', navLinks).forEach(a =>
-    a.addEventListener('click', () => navLinks.classList.remove('open')));
+    a.addEventListener('click', () => setOpen(false)));
 }
 
 /* Reveal on scroll */
@@ -25,7 +29,6 @@ if (reduced || !('IntersectionObserver' in window)) {
     for (const e of entries) {
       if (e.isIntersecting) {
         e.target.classList.add('in');
-        e.target.classList.add('visible');
         io.unobserve(e.target);
       }
     }
@@ -64,45 +67,31 @@ if (galleryImgs.length) {
   const lightbox = document.createElement('div');
   lightbox.className = 'lightbox';
   lightbox.setAttribute('role', 'dialog');
+  lightbox.setAttribute('aria-modal', 'true');
   lightbox.setAttribute('aria-label', 'Screenshot viewer');
   const lbImg = document.createElement('img');
+  lbImg.alt = '';
   lightbox.appendChild(lbImg);
   document.body.appendChild(lightbox);
+  const close = () => {
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+  };
+  const open = (img) => {
+    lbImg.src = img.currentSrc || img.src;
+    lbImg.alt = img.alt || ' enlarged screenshot';
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  };
   galleryImgs.forEach(img => {
-    img.addEventListener('click', () => {
-      lbImg.src = img.currentSrc || img.src;
-      lightbox.classList.add('open');
+    img.tabIndex = 0;
+    img.addEventListener('click', () => open(img));
+    img.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(img); }
     });
   });
-  lightbox.addEventListener('click', () => lightbox.classList.remove('open'));
+  lightbox.addEventListener('click', close);
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') lightbox.classList.remove('open');
+    if (e.key === 'Escape') close();
   });
-}
-
-/* Contact relays (WhatsApp / mailto) — used if a contact form exists */
-const contactForm = $('#contactForm');
-if (contactForm) {
-  const data = () => ({
-    name: $('#fullName', contactForm)?.value.trim() || '',
-    email: $('#email', contactForm)?.value.trim() || '',
-    category: $('#category', contactForm)?.value || '',
-    message: $('#message', contactForm)?.value.trim() || '',
-  });
-  const waURL = (d) => 'https://wa.me/917000530821?text=' + encodeURIComponent(
-    `Hi Vaibhav!\n\nName: ${d.name}\nEmail: ${d.email}\nCategory: ${d.category || 'Not specified'}\n\nMessage:\n${d.message}`);
-  const mailURL = (d) => 'mailto:raikwar.vaibhav95@gmail.com?subject=' +
-    encodeURIComponent(`Portfolio enquiry — ${d.category || 'General'}`) + '&body=' +
-    encodeURIComponent(`Name: ${d.name}\nEmail: ${d.email}\n\n${d.message}`);
-  contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    window.open(waURL(data()), '_blank');
-  });
-  const emailFallback = $('#emailFallback');
-  if (emailFallback) {
-    emailFallback.addEventListener('click', (e) => {
-      e.preventDefault();
-      window.location.href = mailURL(data());
-    });
-  }
 }

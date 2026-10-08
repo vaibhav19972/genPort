@@ -3,8 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0a0d12">
   <meta name="description" content="Punch (Market Pulse) — A single-screen F&O and stock trading mobile application built with Kotlin Multiplatform across iOS and Android.">
-  <title>Punch (Market Pulse) — DevPort</title>
+  <title>Punch (Market Pulse) | Vaibhav Raikwar</title>
+  <link rel="canonical" href="https://codenextport.netlify.app/projects/punch.html">
+  <meta property="og:site_name" content="Vaibhav Raikwar - Portfolio">
+  <meta property="og:url" content="https://codenextport.netlify.app/projects/punch.html">
+  <meta property="og:title" content="Punch (Market Pulse) | Vaibhav Raikwar">
+  <meta property="og:description" content="Punch (Market Pulse) — A single-screen F&O and stock trading mobile application built with Kotlin Multiplatform across iOS and Android.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://codenextport.netlify.app/og/punch.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://codenextport.netlify.app/og/punch.jpg">
   <link rel="stylesheet" href="../style.css">
 </head>
 <body>
@@ -19,7 +31,7 @@
         <a href="../index.html#casefiles" class="nav__link active">Projects</a>
         <a href="../index.html#contact" class="nav__link">Contact</a>
       </div>
-      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">menu</button>
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">menu</button>
     </div>
   </nav>
 
@@ -36,18 +48,16 @@
         <p class="project-hero__desc reveal">Drove development of a single-screen Futures & Options and stock trading mobile application across iOS and Android at Punch Trade. Architected KMP / KMM solutions enabling shared business logic, designed a KMP SDK for onboarding and KYC, and built a custom widget framework for real-time market data.</p>
       </div>
       <div class="project-hero__img reveal">
-        <img src="../assets/app/punch-01.webp" alt="Punch Trading App Screenshot" onerror="this.onerror=null;this.src='../assets/app/punch-01.png'" decoding="async" width="878" height="1436">
+        <picture><source srcset="../assets/app/punch-01.webp" type="image/webp"><img src="../assets/app/punch-01.png" alt="Punch Trading App Screenshot" decoding="async" width="878" height="1436"></picture>
       </div>
     </div>
   </section>
 
 
   <div class="gallery reveal">
-    <figure><img src="../assets/app/punch-01.webp" alt="single-screen trading surface" loading="lazy"
-      onerror="this.onerror=null;this.src='../assets/app/punch-01.png'" decoding="async" width="878" height="1436">
+    <figure><picture><source srcset="../assets/app/punch-01.webp" type="image/webp"><img src="../assets/app/punch-01.png" alt="single-screen trading surface" loading="lazy" decoding="async" width="878" height="1436"></picture>
       <figcaption>fig 01 — single-screen trading surface</figcaption></figure>
-    <figure><img src="../assets/app/punch-02.webp" alt="realtime widgets and positions" loading="lazy"
-      onerror="this.onerror=null;this.src='../assets/app/punch-02.png'" decoding="async" width="844" height="1216">
+    <figure><picture><source srcset="../assets/app/punch-02.webp" type="image/webp"><img src="../assets/app/punch-02.png" alt="realtime widgets and positions" loading="lazy" decoding="async" width="844" height="1216"></picture>
       <figcaption>fig 02 — realtime widgets and positions</figcaption></figure>
   </div>
 
@@ -105,6 +115,13 @@
       </a>
     </div>
   </div>
+
+  <footer class="footer">
+    <div class="wrap footer__row">
+      <div class="footer__note"><span class="kicker"><b>~/</b> vaibhav.raikwar</span><br>© 2026</div>
+      <div class="footer__note"><a href="../index.html">← back to systems</a></div>
+    </div>
+  </footer>
 
   <script type="module" src="../main.js"></script>
 </body>

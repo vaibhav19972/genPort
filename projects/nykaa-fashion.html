@@ -3,8 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0a0d12">
   <meta name="description" content="Nykaa Fashion — Contributed to product discovery, shopping experiences, and user engagement flows for the Nykaa Fashion iOS application.">
-  <title>Nykaa Fashion — DevPort</title>
+  <title>Nykaa Fashion | Vaibhav Raikwar</title>
+  <link rel="canonical" href="https://codenextport.netlify.app/projects/nykaa-fashion.html">
+  <meta property="og:site_name" content="Vaibhav Raikwar - Portfolio">
+  <meta property="og:url" content="https://codenextport.netlify.app/projects/nykaa-fashion.html">
+  <meta property="og:title" content="Nykaa Fashion | Vaibhav Raikwar">
+  <meta property="og:description" content="Nykaa Fashion — Contributed to product discovery, shopping experiences, and user engagement flows for the Nykaa Fashion iOS application.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://codenextport.netlify.app/og/nykaa-fashion.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://codenextport.netlify.app/og/nykaa-fashion.jpg">
   <link rel="stylesheet" href="../style.css">
 </head>
 <body>
@@ -19,7 +31,7 @@
         <a href="../index.html#casefiles" class="nav__link active">Projects</a>
         <a href="../index.html#contact" class="nav__link">Contact</a>
       </div>
-      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">menu</button>
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">menu</button>
     </div>
   </nav>
 
@@ -36,18 +48,16 @@
         <p class="project-hero__desc reveal">Contributed to the core shopping experiences, product discovery, and user engagement flows for the Nykaa Fashion iOS application — a premium fashion e-commerce platform offering curated collections, style recommendations, and seamless checkout experiences.</p>
       </div>
       <div class="project-hero__img reveal">
-        <img src="../assets/app/nykaa-fashion-01.webp" alt="Nykaa Fashion App Screenshot" onerror="this.onerror=null;this.src='../assets/app/nykaa-fashion-01.png'" decoding="async" width="910" height="1618">
+        <picture><source srcset="../assets/app/nykaa-fashion-01.webp" type="image/webp"><img src="../assets/app/nykaa-fashion-01.png" alt="Nykaa Fashion App Screenshot" decoding="async" width="910" height="1618"></picture>
       </div>
     </div>
   </section>
 
 
   <div class="gallery reveal">
-    <figure><img src="../assets/app/nykaa-fashion-01.webp" alt="product discovery and collections" loading="lazy"
-      onerror="this.onerror=null;this.src='../assets/app/nykaa-fashion-01.png'" decoding="async" width="910" height="1618">
+    <figure><picture><source srcset="../assets/app/nykaa-fashion-01.webp" type="image/webp"><img src="../assets/app/nykaa-fashion-01.png" alt="product discovery and collections" loading="lazy" decoding="async" width="910" height="1618"></picture>
       <figcaption>fig 01 — product discovery and collections</figcaption></figure>
-    <figure><img src="../assets/app/nykaa-fashion-02.webp" alt="fashion detail and shopping flows" loading="lazy"
-      onerror="this.onerror=null;this.src='../assets/app/nykaa-fashion-02.png'" decoding="async" width="910" height="1618">
+    <figure><picture><source srcset="../assets/app/nykaa-fashion-02.webp" type="image/webp"><img src="../assets/app/nykaa-fashion-02.png" alt="fashion detail and shopping flows" loading="lazy" decoding="async" width="910" height="1618"></picture>
       <figcaption>fig 02 — fashion detail and shopping flows</figcaption></figure>
   </div>
 
@@ -105,6 +115,13 @@
       </a>
     </div>
   </div>
+
+  <footer class="footer">
+    <div class="wrap footer__row">
+      <div class="footer__note"><span class="kicker"><b>~/</b> vaibhav.raikwar</span><br>© 2026</div>
+      <div class="footer__note"><a href="../index.html">← back to systems</a></div>
+    </div>
+  </footer>
 
   <script type="module" src="../main.js"></script>
 </body>

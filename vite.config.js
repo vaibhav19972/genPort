@@ -8,8 +8,11 @@ const here = fileURLToPath(new URL('.', import.meta.url));
 // Glob projects/ instead of hand-listing: a page added to projects/ can no
 // longer stay tracked-but-unbuilt (that is how ble-proximity + triune-alert
 // became silent production 404s). projects/ is flat, so readdir is enough.
-// resume.html is deliberately NOT an input -- it still holds the old resume
-// content and its fate is a pending decision.
+// Single source of truth for runtime files: public/robots.txt,
+// public/sitemap.xml, public/404.html, public/Vaibhav_Raikwar_Resume.pdf,
+// public/og/*.jpg. Images live in assets/ and are bundled+hashed by Vite;
+// use <picture><source webp><img png></picture> for fallbacks so BOTH
+// variants ride the hashed pipeline (never duplicate into public/assets).
 const projectPages = readdirSync(resolve(here, 'projects'))
   .filter((f) => f.endsWith('.html'))
   .map((f) => [f.replace(/\.html$/, ''), resolve(here, 'projects', f)]);

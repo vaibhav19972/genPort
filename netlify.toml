@@ -1,10 +1,22 @@
 # Live host is Netlify; the Vite build output (dist/) is what gets published.
 # Anything the site needs at RUNTIME must ride in public/ -- Vite copies public/* to dist/*.
+# Single source of truth: public/robots.txt, public/sitemap.xml, public/404.html,
+# public/Vaibhav_Raikwar_Resume.pdf, public/og/*.jpg. Do NOT keep root duplicates.
+# dist/ is a build artifact and is gitignored — never commit it.
 [build]
   command = "npm run build"
   publish = "dist"
 
+# Hashed Vite output (main-*.js/css, *-*.webp/png/woff2) — safe to cache forever.
+# public/* files that land in dist unhashed (og/*.jpg, *.pdf) are NOT under /assets/*,
+# so this rule only ever matches hashed bundle files.
 [[headers]]
   for = "/assets/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
