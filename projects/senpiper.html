@@ -5,36 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Senpiper (One Resource) — Sole mobile lead for a multi-tenant low-code platform. Designed a KMP V2 form-schema architecture and built the Beat police-department app from scratch.">
   <title>Senpiper (One Resource) — DevPort</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../style.css">
-  <style>
-    .project-hero { min-height: 60vh; display: flex; align-items: center; padding-top: calc(var(--nav-height) + 40px); }
-    .project-hero__container { max-width: 900px; margin: 0 auto; padding: 40px 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
-    .project-hero__img { border-radius: 20px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.4); border: 1px solid var(--glass-border); }
-    .project-hero__img img { width: 100%; display: block; }
-    .project-hero__back { display: inline-flex; align-items: center; gap: 8px; font-size: 0.85rem; color: var(--accent); margin-bottom: 20px; font-weight: 500; transition: transform 0.3s; }
-    .project-hero__back:hover { transform: translateX(-4px); }
-    .project-hero__tags { display: flex; gap: 6px; margin-bottom: 16px; }
-    .project-hero__title { font-size: clamp(1.6rem, 4vw, 2.2rem); font-weight: 800; margin-bottom: 12px; line-height: 1.2; }
-    .project-hero__desc { font-size: 0.92rem; color: var(--text-secondary); line-height: 1.7; }
-    .project-details { max-width: 900px; margin: 0 auto; padding: 0 24px 100px; }
-    .project-section { margin-bottom: 48px; }
-    .project-section h2 { font-size: 1.3rem; font-weight: 700; margin-bottom: 16px; letter-spacing: -0.01em; }
-    .project-section p, .project-section li { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.7; }
-    .project-section ul { padding-left: 0; }
-    .project-section li { padding-left: 18px; position: relative; margin-bottom: 10px; }
-    .project-section li::before { content: ''; position: absolute; left: 0; top: 9px; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
-    .tech-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
-    .tech-item { padding: 18px; border-radius: 14px; }
-    .tech-item h4 { font-size: 0.9rem; font-weight: 600; margin-bottom: 4px; }
-    .tech-item p { font-size: 0.78rem; color: var(--text-secondary); }
-    @media (max-width: 768px) {
-      .project-hero__container { grid-template-columns: 1fr; }
-      .project-hero__img { order: -1; }
-    }
-  </style>
 </head>
 <body>
   <nav class="nav" id="nav">
@@ -45,12 +16,10 @@
       <div class="nav__links" id="navLinks">
         <a href="../index.html" class="nav__link">Home</a>
         <a href="../index.html#experience" class="nav__link">Experience</a>
-        <a href="../index.html#projects" class="nav__link active">Projects</a>
+        <a href="../index.html#casefiles" class="nav__link active">Projects</a>
         <a href="../index.html#contact" class="nav__link">Contact</a>
       </div>
-      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">menu</button>
     </div>
   </nav>
 
@@ -68,7 +37,7 @@
         <p class="project-hero__desc reveal">Sole mobile lead for the iOS and Android apps of One Resource, Senpiper's multi-tenant low-code platform for forms, workflows, and business process automation used by government, consulting, and banking clients.</p>
       </div>
       <div class="project-hero__img reveal">
-        <img src="../assets/app/senpiper-01.webp" alt="Senpiper One Resource App Screenshot" onerror="this.onerror=null;this.src='../assets/senpiper.svg'">
+        <img src="../assets/app/senpiper-01.webp" alt="Senpiper One Resource App Screenshot" onerror="this.onerror=null;this.src='../assets/senpiper.svg'" decoding="async" width="748" height="1618">
       </div>
     </div>
   </section>
@@ -76,10 +45,10 @@
 
   <div class="gallery reveal">
     <figure><img src="../assets/app/senpiper-01.webp" alt="the One Resource app — forms runtime" loading="lazy"
-      onerror="this.onerror=null;this.src='../assets/app/senpiper-01.png'">
+      onerror="this.onerror=null;this.src='../assets/app/senpiper-01.png'" decoding="async" width="748" height="1618">
       <figcaption>fig 01 — the One Resource app — forms runtime</figcaption></figure>
     <figure><img src="../assets/app/senpiper-02.webp" alt="tenant-branded flows on the shared engine" loading="lazy"
-      onerror="this.onerror=null;this.src='../assets/app/senpiper-02.png'">
+      onerror="this.onerror=null;this.src='../assets/app/senpiper-02.png'" decoding="async" width="748" height="1618">
       <figcaption>fig 02 — tenant-branded flows on the shared engine</figcaption></figure>
   </div>
 

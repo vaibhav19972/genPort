@@ -71,7 +71,7 @@ body {
 }
 ::selection { background: var(--acc); color: var(--acc-ink); }
 a { color: inherit; text-decoration: none; }
-img { display: block; max-width: 100%; }
+img { display: block; max-width: 100%; height: auto; }
 button { font: inherit; cursor: pointer; }
 :focus-visible { outline: 2px solid var(--acc); outline-offset: 3px; border-radius: 2px; }
 

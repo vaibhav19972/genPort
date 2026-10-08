@@ -1,0 +1,10 @@
+# Live host is Netlify; the Vite build output (dist/) is what gets published.
+# Anything the site needs at RUNTIME must ride in public/ -- Vite copies public/* to dist/*.
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

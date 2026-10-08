@@ -1,24 +1,27 @@
-import { resolve } from 'path';
+import { readdirSync } from 'node:fs';
+import { resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { defineConfig } from 'vite';
+
+const here = fileURLToPath(new URL('.', import.meta.url));
+
+// Glob projects/ instead of hand-listing: a page added to projects/ can no
+// longer stay tracked-but-unbuilt (that is how ble-proximity + triune-alert
+// became silent production 404s). projects/ is flat, so readdir is enough.
+// resume.html is deliberately NOT an input -- it still holds the old resume
+// content and its fate is a pending decision.
+const projectPages = readdirSync(resolve(here, 'projects'))
+  .filter((f) => f.endsWith('.html'))
+  .map((f) => [f.replace(/\.html$/, ''), resolve(here, 'projects', f)]);
 
 export default defineConfig({
   base: './',
   build: {
     rollupOptions: {
-      input: {
-        main: resolve(__dirname, 'index.html'),
-        tms: resolve(__dirname, 'projects/tms.html'),
-        uniquelo: resolve(__dirname, 'projects/uniquelo.html'),
-        cricbet: resolve(__dirname, 'projects/cricbet.html'),
-        clientSites: resolve(__dirname, 'projects/client-sites.html'),
-        senpiper: resolve(__dirname, 'projects/senpiper.html'),
-        googleHomeNest: resolve(__dirname, 'projects/google-home-nest.html'),
-        inpharmd: resolve(__dirname, 'projects/inpharmd.html'),
-        punch: resolve(__dirname, 'projects/punch.html'),
-        nykaa: resolve(__dirname, 'projects/nykaa.html'),
-        nykaaFashion: resolve(__dirname, 'projects/nykaa-fashion.html'),
-        coachable: resolve(__dirname, 'projects/coachable.html'),
-      },
+      input: Object.fromEntries([
+        ['main', resolve(here, 'index.html')],
+        ...projectPages,
+      ]),
     },
   },
 });
