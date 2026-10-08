@@ -265,6 +265,44 @@ button { font: inherit; cursor: pointer; }
 .tag--live::before { content: ''; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--acc); margin-right: 7px; animation: pulse 2s ease infinite; }
 .tag--demo { color: var(--amber); border-color: rgba(227, 179, 65, 0.4); background: rgba(227, 179, 65, 0.07); }
 
+/* ---------- System detail gallery ---------- */
+.gallery {
+  display: flex; gap: 14px; overflow-x: auto;
+  scroll-snap-type: x mandatory; padding: 4px 4px 16px;
+  margin-top: 30px;
+}
+.gallery figure { scroll-snap-align: start; flex: 0 0 min(74%, 700px); margin: 0; cursor: zoom-in; }
+.gallery img {
+  width: 100%; display: block; border: 1px solid var(--line);
+  border-radius: var(--r); background: var(--bg-panel);
+  transition: border-color 0.15s;
+}
+.gallery figure:hover img { border-color: rgba(71, 209, 120, 0.45); }
+.gallery figcaption { font-family: var(--mono); font-size: 0.72rem; color: var(--mut); margin-top: 8px; }
+.gallery-note { font-family: var(--mono); font-size: 0.72rem; color: var(--mut); margin-top: 2px; }
+
+.lightbox {
+  position: fixed; inset: 0; z-index: 200; cursor: zoom-out;
+  background: rgba(10, 13, 18, 0.94);
+  display: none; align-items: center; justify-content: center; padding: 30px;
+}
+.lightbox.open { display: flex; }
+.lightbox img { max-width: 100%; max-height: 100%; border: 1px solid var(--line); border-radius: var(--r); }
+
+/* System card links */
+.sys__links { display: flex; gap: 18px; margin-top: 14px; flex-wrap: wrap; }
+.sys__links .sys__go { color: var(--ink-dim); }
+.sys__links .sys__go:hover { color: var(--acc); }
+.sys__links .sys__go--case { color: var(--acc); }
+.sys__name a { color: inherit; }
+.sys__name a:hover { color: var(--acc); }
+
+.sys { position: relative; }
+.sys__go--case { position: absolute; inset: 0; z-index: 1; }
+.sys__links { position: relative; z-index: 2; }
+.sys__links .sys__go { position: relative; z-index: 2; }
+
+
 /* ---------- Systems manifest (live products) ---------- */
 .manifest { margin-top: 44px; border-top: 1px solid var(--line); }
 .sys {

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="CricBet — a live cricket odds engine: realtime scores, multiple betting markets, admin-controlled credit management. React + Vite, live on Netlify.">
+  <title>CricBet — Live Odds Engine | Vaibhav Raikwar</title>
+  
+  <script type="module" crossorigin src="../assets/main-1d2ce0a5.js"></script>
+  <link rel="stylesheet" href="../assets/main-86b2b95b.css">
+</head>
+
+<body>
+  <nav class="nav" id="nav">
+    <div class="nav__container">
+      <a href="../index.html" class="nav__logo"><span class="prompt">~/</span><span>systems/cricbet</span></a>
+      <div class="nav__links" id="navLinks">
+        <a href="../index.html#systems" class="nav__link">← All systems</a>
+      </div>
+      <div class="nav__status"><span class="dot"></span> SYS-03 · LIVE</div>
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle navigation menu">menu</button>
+    </div>
+  </nav>
+
+  <main>
+    <header class="hero" id="hero" style="padding-bottom: 0;">
+      <div class="wrap">
+        <div class="hero__badge reveal"><span class="dot"></span> SYS-03 · DEPLOYED SYSTEM</div>
+        <h1 class="hero__title reveal" style="font-size: clamp(2rem, 4.6vw, 3.2rem); max-width: 22ch;">
+          CricBet — a live odds engine, not a mock<span class="gradient-text">.</span>
+        </h1>
+        <p class="hero__sub reveal" style="max-width: 68ch;">
+          A real-time cricket betting surface: live scores, multiple betting markets per match,
+          and admin-controlled credit management. The hard part of a betting product is state —
+          odds moving, bets opening and settling, user credits — and all of it is live here.
+        </p>
+        <div class="hero__actions reveal">
+          <a class="btn btn--solid" href="https://batting-demo.netlify.app/" target="_blank" rel="noopener">Open the live app <span class="arr">↗</span></a>
+          <a class="btn" href="https://github.com/vaibhav19972/LiveBetting" target="_blank" rel="noopener">Source on GitHub <span class="arr">↗</span></a>
+        </div>
+
+        <div class="gallery reveal">
+          <figure><img src="../assets/01-ef7c272d.webp" alt="CricBet">
+            <figcaption>fig 01 — live match view</figcaption></figure>
+          <figure><img src="../assets/02-50b653da.webp" alt="CricBet odds">
+            <figcaption>fig 02 — betting markets</figcaption></figure>
+          <figure><img src="../assets/03-25232690.webp" alt="CricBet scores">
+            <figcaption>fig 03 — live scores</figcaption></figure>
+          <figure><img src="../assets/04-41cdf396.webp" alt="CricBet">
+            <figcaption>fig 04 — odds detail</figcaption></figure>
+          <figure><img src="../assets/05-5797c348.webp" alt="CricBet">
+            <figcaption>fig 05 — bet placement</figcaption></figure>
+          <figure><img src="../assets/06-f31a19b9.webp" alt="CricBet">
+            <figcaption>fig 06 — credits</figcaption></figure>
+          <figure><img src="../assets/07-2b68daef.webp" alt="CricBet admin">
+            <figcaption>fig 07 — admin: credit management</figcaption></figure>
+          <figure><img src="../assets/08-1ba36729.webp" alt="CricBet admin">
+            <figcaption>fig 08 — admin: market control</figcaption></figure>
+          <figure><img src="../assets/09-fcfdfcd0.webp" alt="CricBet">
+            <figcaption>fig 09 — settlement</figcaption></figure>
+        </div>
+        <p class="gallery-note reveal">click any image to enlarge · drag/scroll horizontally for more</p>
+      </div>
+    </header>
+
+    <section class="sec" id="depth">
+      <div class="wrap">
+        <div class="sec-head reveal"><span class="kicker"><b>DEPTH</b> / HOW FAR IT GOES</span></div>
+        <h2 class="sec-title reveal">Under the hood<span class="gradient-text">.</span></h2>
+
+        <div class="matrix">
+          <div class="cell reveal">
+            <div class="cell__k">Realtime</div>
+            <div class="cell__h">Live match state, moving odds</div>
+            <p class="cell__p">Scores and odds update as the match state changes — the UI is a live
+              view over moving data, not a snapshot. Multiple simultaneous betting markets per
+              match, each with its own prices and open/settled lifecycle.</p>
+          </div>
+          <div class="cell reveal">
+            <div class="cell__k">Money</div>
+            <div class="cell__h">Credit system with admin control</div>
+            <p class="cell__p">User credit balances, bet placement against balance, and
+              settlement flow — with an admin panel that controls credits and markets. The
+              trust boundary (user can't self-award credits) is the actual engineering here.</p>
+          </div>
+          <div class="cell reveal">
+            <div class="cell__k">Frontend</div>
+            <div class="cell__h">React · Vite · realtime state</div>
+            <p class="cell__p">A stateful SPA where the hard work is state management: concurrent
+              updates, optimistic bet placement, and consistent money math in the client — the
+              kind of UI correctness that looks easy and isn't.</p>
+          </div>
+          <div class="cell reveal">
+            <div class="cell__k">Shipping</div>
+            <div class="cell__h">Scoped, built, deployed in one pass</div>
+            <p class="cell__p">The whole product — domain modeling, markets UI, admin surface —
+              was scoped and deployed in a single agent-driven build pass on Netlify. A demo of
+              what the forward-deployed loop delivers in a day.</p>
+          </div>
+        </div>
+
+        <div class="callout reveal">
+          <p><strong>Why it matters:</strong> betting surfaces are unforgiving — state
+            inconsistencies and money bugs are visible instantly. Building one that holds together
+            live is a direct demonstration of agent-built ≠ fragile.</p>
+          <p class="mono-note">live: batting-demo.netlify.app · react + vite · realtime state</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__row">
+      <div class="footer__note"><span class="kicker"><b>~/</b> vaibhav.raikwar</span><br>© 2026</div>
+      <div class="footer__note"><a href="../index.html">← back to systems</a></div>
+    </div>
+  </footer>
+
+  
+</body>
+
+</html>

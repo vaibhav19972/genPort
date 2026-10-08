@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="UniqueLo — luxury embroidered-apparel e-commerce flagship with a live Supabase database, design-token system, craft-provenance catalog, and a non-technical-owner admin surface.">
+  <title>UniqueLo — Luxury Storefront | Vaibhav Raikwar</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+  <nav class="nav" id="nav">
+    <div class="nav__container">
+      <a href="../index.html" class="nav__logo"><span class="prompt">~/</span><span>systems/uniquelo</span></a>
+      <div class="nav__links" id="navLinks">
+        <a href="../index.html#systems" class="nav__link">← All systems</a>
+      </div>
+      <div class="nav__status"><span class="dot"></span> SYS-02 · LIVE</div>
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle navigation menu">menu</button>
+    </div>
+  </nav>
+
+  <main>
+    <header class="hero" id="hero" style="padding-bottom: 0;">
+      <div class="wrap">
+        <div class="hero__badge reveal"><span class="dot"></span> SYS-02 · DEPLOYED SYSTEM</div>
+        <h1 class="hero__title reveal" style="font-size: clamp(2rem, 4.6vw, 3.2rem); max-width: 22ch;">
+          UniqueLo — commerce with a live database<span class="gradient-text">.</span>
+        </h1>
+        <p class="hero__sub reveal" style="max-width: 68ch;">
+          A luxury embroidered-apparel storefront where everything is real: products, craft
+          provenance, and pricing are served from a live Supabase Postgres database — and the
+          content surfaces are built so a non-technical owner can run the store day to day.
+        </p>
+        <div class="hero__actions reveal">
+          <a class="btn btn--solid" href="https://unique-lo.vercel.app/" target="_blank" rel="noopener">Open the live store <span class="arr">↗</span></a>
+          <a class="btn" href="https://github.com/vaibhav19972/uniqueLo" target="_blank" rel="noopener">Source on GitHub <span class="arr">↗</span></a>
+        </div>
+
+        <div class="gallery reveal">
+          <figure><img src="../assets/shots/uniquelo/01.webp" alt="UniqueLo storefront">
+            <figcaption>fig 01 — storefront</figcaption></figure>
+          <figure><img src="../assets/shots/uniquelo/02.webp" alt="UniqueLo collection">
+            <figcaption>fig 02 — collection view</figcaption></figure>
+          <figure><img src="../assets/shots/uniquelo/03.webp" alt="UniqueLo product">
+            <figcaption>fig 03 — product page</figcaption></figure>
+          <figure><img src="../assets/shots/uniquelo/04.webp" alt="UniqueLo atelier">
+            <figcaption>fig 04 — craft provenance</figcaption></figure>
+        </div>
+        <p class="gallery-note reveal">click any image to enlarge</p>
+      </div>
+    </header>
+
+    <section class="sec" id="depth">
+      <div class="wrap">
+        <div class="sec-head reveal"><span class="kicker"><b>DEPTH</b> / HOW FAR IT GOES</span></div>
+        <h2 class="sec-title reveal">Under the hood<span class="gradient-text">.</span></h2>
+
+        <div class="matrix">
+          <div class="cell reveal">
+            <div class="cell__k">Data</div>
+            <div class="cell__h">Live Supabase Postgres</div>
+            <p class="cell__p">A complete SQL schema plus seed dataset under version control —
+              products, variants, craft techniques, provenance fields (batch number, craft region,
+              fabric GSM) — executed 1-click on Supabase. Data contracts are documented so types,
+              schema, and seed stay in parity.</p>
+          </div>
+          <div class="cell reveal">
+            <div class="cell__k">Frontend</div>
+            <div class="cell__h">React 19 · TypeScript · Tailwind v4</div>
+            <p class="cell__p">Modern stack with strict typing throughout, a documented design-token
+              system, oxlint for code quality, and async data layered through a query layer — the
+              app falls back to seeded JSON only when the database isn't configured.</p>
+          </div>
+          <div class="cell reveal">
+            <div class="cell__k">Motion</div>
+            <div class="cell__h">Engineered, not decorated</div>
+            <p class="cell__p">GSAP + ScrollTrigger and Lenis smooth scroll drive a documented motion
+              system (docs/04) — reveals, parallax, and transitions specified per component so the
+              luxury feel is systematic rather than ad-hoc animation.</p>
+          </div>
+          <div class="cell reveal">
+            <div class="cell__k">Ownership</div>
+            <div class="cell__h">A layperson can run it</div>
+            <p class="cell__p">The whole point of the project: articles, prices, and product upload
+              are maintainable by a non-technical person, with agent-assisted edit flows. The
+              docs suite (README + STAR_GOAL north star + phase docs) is the source of truth for
+              any human or agent working on it next.</p>
+          </div>
+        </div>
+
+        <div class="callout reveal">
+          <p><strong>Deploy posture:</strong> Vercel with vercel.json for edge caching and SPA
+            routing, plus a multi-stage Dockerfile + docker-compose for a self-hosted production
+            server on any VPS — the same codebase, two deployment targets.</p>
+          <p class="mono-note">live: unique-lo.vercel.app · db: supabase (sql schema + seed in repo)</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec" id="how">
+      <div class="wrap">
+        <div class="sec-head reveal"><span class="kicker"><b>METHOD</b> / HOW IT WAS BUILT</span></div>
+        <h2 class="sec-title reveal">Planned in docs, shipped by agents<span class="gradient-text">.</span></h2>
+        <p class="sec-sub reveal">Built as a phased project: a north-star vision document, then
+          design-system and data-contract docs, then build phases executed by agent workflows with
+          the documentation as the contract. This is the forward-deployed method working end to
+          end — the docs let cheap models do the mechanical work while the plan holds the system
+          together.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__row">
+      <div class="footer__note"><span class="kicker"><b>~/</b> vaibhav.raikwar</span><br>© 2026</div>
+      <div class="footer__note"><a href="../index.html">← back to systems</a></div>
+    </div>
+  </footer>
+
+  <script type="module" src="../main.js"></script>
+</body>
+
+</html>

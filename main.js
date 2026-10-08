@@ -58,6 +58,28 @@ if (spySections.length && 'IntersectionObserver' in window) {
   spySections.forEach(s => spy.observe(s));
 }
 
+/* Lightbox for gallery images */
+const galleryImgs = $$('.gallery img');
+if (galleryImgs.length) {
+  const lightbox = document.createElement('div');
+  lightbox.className = 'lightbox';
+  lightbox.setAttribute('role', 'dialog');
+  lightbox.setAttribute('aria-label', 'Screenshot viewer');
+  const lbImg = document.createElement('img');
+  lightbox.appendChild(lbImg);
+  document.body.appendChild(lightbox);
+  galleryImgs.forEach(img => {
+    img.addEventListener('click', () => {
+      lbImg.src = img.currentSrc || img.src;
+      lightbox.classList.add('open');
+    });
+  });
+  lightbox.addEventListener('click', () => lightbox.classList.remove('open'));
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') lightbox.classList.remove('open');
+  });
+}
+
 /* Contact relays (WhatsApp / mailto) — used if a contact form exists */
 const contactForm = $('#contactForm');
 if (contactForm) {

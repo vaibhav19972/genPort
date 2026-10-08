@@ -124,25 +124,31 @@
           built and shipped by orchestrated agent fleets, verified and maintained by me.</p>
 
         <div class="manifest">
-          <a class="sys reveal" href="https://tms-web-lime.vercel.app/" target="_blank" rel="noopener">
+          <div class="sys reveal">
+            <a class="sys__go sys__go--case" href="./projects/tms.html" aria-label="TMS case file"></a>
             <span class="sys__id">SYS-01</span>
-            <div class="sys__shot"><img src="./assets/shots/tms-thumb.webp" alt="TMS ticket management app"
-              loading="lazy" onerror="this.onerror=null;this.src='./assets/shots/tms.png'"></div>
+            <div class="sys__shot"><img src="./assets/shots/tms/02.webp" alt="TMS ticket management app"
+              loading="lazy" onerror="this.onerror=null;this.src='./assets/shots/tms/02.png'"></div>
             <div>
               <div class="sys__name">TMS — Ticket Management <span class="tag tag--live">LIVE</span></div>
-              <p class="sys__desc">Jira-class ticketing platform: NestJS API, Next.js frontend, Postgres + Prisma,
-                Docker compose. Turborepo monorepo with shared packages. API health-checked live on Render.</p>
+              <p class="sys__desc">Jira-class ticketing platform: 18-module NestJS API, 18 Prisma models,
+                sprint boards, guarded workflows, realtime, widget dashboards, audit log. Turborepo monorepo.
+                API health-checked live on Render.</p>
               <div class="sys__stack">
                 <span class="tag">NestJS</span><span class="tag">Next.js</span><span class="tag">Postgres</span><span class="tag">Prisma</span><span class="tag">Turborepo</span>
               </div>
+              <div class="sys__links">
+                <a class="sys__go" href="https://tms-web-lime.vercel.app/" target="_blank" rel="noopener">live app ↗</a>
+                <a class="sys__go" href="https://github.com/vaibhav19972/tms" target="_blank" rel="noopener">source ↗</a>
+              </div>
             </div>
-            <span class="sys__go">tms-web-lime.vercel.app <span class="arr">↗</span></span>
-          </a>
+          </div>
 
-          <a class="sys reveal" href="https://unique-lo.vercel.app/" target="_blank" rel="noopener">
+          <div class="sys reveal">
+            <a class="sys__go sys__go--case" href="./projects/uniquelo.html" aria-label="UniqueLo case file"></a>
             <span class="sys__id">SYS-02</span>
-            <div class="sys__shot"><img src="./assets/shots/uniquelo-thumb.webp" alt="UniqueLo storefront"
-              loading="lazy" onerror="this.onerror=null;this.src='./assets/shots/uniquelo.png'"></div>
+            <div class="sys__shot"><img src="./assets/shots/uniquelo/01.webp" alt="UniqueLo storefront"
+              loading="lazy" onerror="this.onerror=null;this.src='./assets/shots/uniquelo/01.png'"></div>
             <div>
               <div class="sys__name">UniqueLo — Luxury Storefront <span class="tag tag--live">LIVE</span></div>
               <p class="sys__desc">E-commerce flagship with a live Supabase database: full SQL schema + seed,
@@ -151,44 +157,56 @@
               <div class="sys__stack">
                 <span class="tag">React 19</span><span class="tag">TypeScript</span><span class="tag">Supabase</span><span class="tag">Tailwind v4</span><span class="tag">GSAP</span>
               </div>
-            </div>
-            <span class="sys__go">unique-lo.vercel.app <span class="arr">↗</span></span>
-          </a>
-
-          <a class="sys reveal" href="https://batting-demo.netlify.app/" target="_blank" rel="noopener">
-            <span class="sys__id">SYS-03</span>
-            <div class="sys__shot"><img src="./assets/shots/cricbet-thumb.webp" alt="CricBet live cricket odds"
-              loading="lazy" onerror="this.onerror=null;this.src='./assets/shots/cricbet.png'"></div>
-            <div>
-              <div class="sys__name">CricBet — Live Odds Engine <span class="tag tag--live">LIVE</span></div>
-              <p class="sys__desc">Real-time cricket betting demo: live scores, multiple betting markets, and
-                admin-controlled credit management — a full stateful trading surface, not a static page.</p>
-              <div class="sys__stack">
-                <span class="tag">React</span><span class="tag">Vite</span><span class="tag">Realtime</span>
+              <div class="sys__links">
+                <a class="sys__go" href="https://unique-lo.vercel.app/" target="_blank" rel="noopener">live store ↗</a>
+                <a class="sys__go" href="https://github.com/vaibhav19972/uniqueLo" target="_blank" rel="noopener">source ↗</a>
               </div>
             </div>
-            <span class="sys__go">batting-demo.netlify.app <span class="arr">↗</span></span>
-          </a>
+          </div>
 
-          <a class="sys reveal" href="https://legal-demo.netlify.app/" target="_blank" rel="noopener">
-            <span class="sys__id">SYS-04</span>
-            <div class="sys__shot"><img src="./assets/shots/legal-thumb.webp" alt="Advocate chambers site"
-              loading="lazy" onerror="this.onerror=null;this.src='./assets/shots/legal.png'"></div>
+          <div class="sys reveal">
+            <a class="sys__go sys__go--case" href="./projects/cricbet.html" aria-label="CricBet case file"></a>
+            <span class="sys__id">SYS-03</span>
+            <div class="sys__shot"><img src="./assets/shots/cricbet/02.webp" alt="CricBet live cricket odds"
+              loading="lazy" onerror="this.onerror=null;this.src='./assets/shots/cricbet/02.png'"></div>
             <div>
-              <div class="sys__name">Chambers — Senior Advocate Site <span class="tag tag--demo">DEMO</span></div>
+              <div class="sys__name">CricBet — Live Odds Engine <span class="tag tag--live">LIVE</span></div>
+              <p class="sys__desc">Real-time cricket betting surface: live scores, multiple betting markets,
+                bet settlement, and admin-controlled credit management — a full stateful trading
+                product, not a static page.</p>
+              <div class="sys__stack">
+                <span class="tag">React</span><span class="tag">Vite</span><span class="tag">Realtime state</span>
+              </div>
+              <div class="sys__links">
+                <a class="sys__go" href="https://batting-demo.netlify.app/" target="_blank" rel="noopener">live app ↗</a>
+                <a class="sys__go" href="https://github.com/vaibhav19972/LiveBetting" target="_blank" rel="noopener">source ↗</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="sys reveal">
+            <a class="sys__go sys__go--case" href="./projects/client-sites.html" aria-label="Chambers case file"></a>
+            <span class="sys__id">SYS-04</span>
+            <div class="sys__shot"><img src="./assets/shots/legal/01.webp" alt="Advocate chambers site"
+              loading="lazy" onerror="this.onerror=null;this.src='./assets/shots/legal/01.png'"></div>
+            <div>
+              <div class="sys__name">Chambers — Senior Advocate <span class="tag tag--demo">DEMO</span></div>
               <p class="sys__desc">Professional chambers presence for a Supreme Court senior advocate:
                 practice areas, credentials, and consultation intake — designed and shipped agent-first.</p>
               <div class="sys__stack">
                 <span class="tag">Vite SPA</span><span class="tag">Netlify</span>
               </div>
+              <div class="sys__links">
+                <a class="sys__go" href="https://legal-demo.netlify.app/" target="_blank" rel="noopener">live site ↗</a>
+              </div>
             </div>
-            <span class="sys__go">legal-demo.netlify.app <span class="arr">↗</span></span>
-          </a>
+          </div>
 
-          <a class="sys reveal" href="https://weddingdemo101.netlify.app/" target="_blank" rel="noopener">
+          <div class="sys reveal">
+            <a class="sys__go sys__go--case" href="./projects/client-sites.html#atelier" aria-label="Atelier case file"></a>
             <span class="sys__id">SYS-05</span>
-            <div class="sys__shot"><img src="./assets/shots/wedding-thumb.webp" alt="Luxury wedding photography site"
-              loading="lazy" onerror="this.onerror=null;this.src='./assets/shots/wedding.png'"></div>
+            <div class="sys__shot"><img src="./assets/shots/wedding/01.webp" alt="Luxury wedding photography site"
+              loading="lazy" onerror="this.onerror=null;this.src='./assets/shots/wedding/01.png'"></div>
             <div>
               <div class="sys__name">Atelier — Wedding Photography <span class="tag tag--demo">DEMO</span></div>
               <p class="sys__desc">Luxury wedding-photography brand site: editorial galleries, portfolio
@@ -197,9 +215,11 @@
               <div class="sys__stack">
                 <span class="tag">Next.js</span><span class="tag">Netlify</span>
               </div>
+              <div class="sys__links">
+                <a class="sys__go" href="https://weddingdemo101.netlify.app/" target="_blank" rel="noopener">live site ↗</a>
+              </div>
             </div>
-            <span class="sys__go">weddingdemo101.netlify.app <span class="arr">↗</span></span>
-          </a>
+          </div>
         </div>
       </div>
     </section>
@@ -377,7 +397,8 @@
 
         <div class="cases">
           <a class="case case--wide reveal" href="./projects/senpiper.html">
-            <div class="case__shot"><img src="./assets/senpiper.svg" alt="Senpiper One Resource" loading="lazy"></div>
+            <div class="case__shot"><img src="./assets/app/senpiper-01.webp" alt="Senpiper One Resource app"
+              loading="lazy" onerror="this.onerror=null;this.src='./assets/app/senpiper-01.png'"></div>
             <div class="case__body">
               <div class="case__t">Senpiper One Resource — KMP Form Engine</div>
               <p class="case__d">Sole mobile lead on a multi-tenant low-code platform. Designed the KMP V2
@@ -390,7 +411,8 @@
             </div>
           </a>
           <a class="case reveal" href="./projects/punch.html">
-            <div class="case__shot"><img src="./assets/punch.png" alt="Punch trading app" loading="lazy"></div>
+            <div class="case__shot"><img src="./assets/app/punch-01.webp" alt="Punch trading app"
+              loading="lazy" onerror="this.onerror=null;this.src='./assets/app/punch-01.png'"></div>
             <div class="case__body">
               <div class="case__t">Punch — F&amp;O Trading</div>
               <p class="case__d">Single-screen options trading across iOS + Android. KMP onboarding SDK,
@@ -420,7 +442,8 @@
             </div>
           </a>
           <a class="case reveal" href="./projects/nykaa.html">
-            <div class="case__shot"><img src="./assets/nykaa-beauty.png" alt="Nykaa beauty app" loading="lazy"></div>
+            <div class="case__shot"><img src="./assets/app/nykaa-beauty-01.webp" alt="Nykaa beauty app"
+              loading="lazy" onerror="this.onerror=null;this.src='./assets/app/nykaa-beauty-01.png'"></div>
             <div class="case__body">
               <div class="case__t">Nykaa — E-commerce</div>
               <p class="case__d">Live UIKit→SwiftUI migration, Nike India checkout, remote-config-driven
@@ -430,7 +453,8 @@
             </div>
           </a>
           <a class="case reveal" href="./projects/nykaa-fashion.html">
-            <div class="case__shot"><img src="./assets/nykaa-fashion.png" alt="Nykaa Fashion app" loading="lazy"></div>
+            <div class="case__shot"><img src="./assets/app/nykaa-fashion-01.webp" alt="Nykaa Fashion app"
+              loading="lazy" onerror="this.onerror=null;this.src='./assets/app/nykaa-fashion-01.png'"></div>
             <div class="case__body">
               <div class="case__t">Nykaa Fashion</div>
               <p class="case__d">Product discovery, curated collections, and engagement flows for a

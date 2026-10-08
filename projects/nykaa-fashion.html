@@ -37,18 +37,10 @@
   </style>
 </head>
 <body>
-  <div class="cursor" id="cursor"></div>
-  <div class="cursor-follower" id="cursorFollower"></div>
-  <div class="scroll-progress" id="scrollProgress"></div>
-  <canvas id="particleCanvas"></canvas>
-  <div class="bg-orb bg-orb--1"></div>
-  <div class="bg-orb bg-orb--2"></div>
-
   <nav class="nav" id="nav">
     <div class="nav__container">
       <a href="../index.html" class="nav__logo">
-        <span class="nav__logo-icon">⬡</span>
-        <span class="nav__logo-text">DevPort</span>
+        <span class="prompt">~/</span><span>vaibhav.raikwar</span>
       </a>
       <div class="nav__links" id="navLinks">
         <a href="../index.html" class="nav__link">Home</a>
@@ -75,10 +67,20 @@
         <p class="project-hero__desc reveal">Contributed to the core shopping experiences, product discovery, and user engagement flows for the Nykaa Fashion iOS application — a premium fashion e-commerce platform offering curated collections, style recommendations, and seamless checkout experiences.</p>
       </div>
       <div class="project-hero__img reveal">
-        <img src="../assets/nykaa-fashion.png" alt="Nykaa Fashion App Screenshot">
+        <img src="../assets/app/nykaa-fashion-01.webp" alt="Nykaa Fashion App Screenshot" onerror="this.onerror=null;this.src='../assets/nykaa-fashion.png'">
       </div>
     </div>
   </section>
+
+
+  <div class="gallery reveal">
+    <figure><img src="../assets/app/nykaa-fashion-01.webp" alt="product discovery and collections" loading="lazy"
+      onerror="this.onerror=null;this.src='../assets/app/nykaa-fashion-01.png'">
+      <figcaption>fig 01 — product discovery and collections</figcaption></figure>
+    <figure><img src="../assets/app/nykaa-fashion-02.webp" alt="fashion detail and shopping flows" loading="lazy"
+      onerror="this.onerror=null;this.src='../assets/app/nykaa-fashion-02.png'">
+      <figcaption>fig 02 — fashion detail and shopping flows</figcaption></figure>
+  </div>
 
   <div class="project-details">
     <div class="project-section reveal">
@@ -128,7 +130,7 @@
     </div>
 
     <div class="project-section reveal" style="text-align: center; padding-top: 24px;">
-      <a href="../index.html" class="hero__cta magnetic" style="display: inline-flex;">
+      <a href="../index.html" class="hero__cta" style="display: inline-flex;">
         <span>← Back to Portfolio</span>
         <div class="hero__cta-glow"></div>
       </a>
