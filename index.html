@@ -5,729 +5,527 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
-    content="Portfolio of a Senior Mobile Developer specializing in iOS (Swift, SwiftUI) and Kotlin Multiplatform (KMP). Available for remote freelance and consulting.">
-  <title>Mobile Software Engineer | iOS &amp; KMP Expert Portfolio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="/style.css">
+    content="Vaibhav Raikwar — Forward-Deployed Engineer. Ships live products end-to-end by orchestrating AI agent fleets: mobile lead at Senpiper (KMP), 5 deployed products, agent harnesses across frontier and local models.">
+  <title>Vaibhav Raikwar — Forward-Deployed Engineer</title>
+  <meta property="og:title" content="Vaibhav Raikwar — Forward-Deployed Engineer">
+  <meta property="og:description" content="5 live products shipped with agent fleets. 4+ years mobile engineering (Google Home, Nykaa, KMP trading). Agent orchestration across frontier + local models.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⬡</text></svg>">
+  <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
-  <!-- Custom Cursor -->
-  <div class="cursor" id="cursor"></div>
-  <div class="cursor-follower" id="cursorFollower"></div>
-
-  <!-- Scroll progress bar -->
-  <div class="scroll-progress" id="scrollProgress"></div>
-
-  <!-- Particle Canvas -->
-  <canvas id="particleCanvas"></canvas>
-
-  <!-- Background gradient orbs (parallax) -->
-  <div class="bg-orb bg-orb--1"></div>
-  <div class="bg-orb bg-orb--2"></div>
-  <div class="bg-orb bg-orb--3"></div>
-
-  <!-- ====== NAVIGATION ====== -->
+  <!-- ====== NAV ====== -->
   <nav class="nav" id="nav">
     <div class="nav__container">
       <a href="#hero" class="nav__logo">
-        <span class="nav__logo-icon">⬡</span>
-        <span class="nav__logo-text">DevPort</span>
+        <span class="prompt">~/</span><span>vaibhav.raikwar</span>
       </a>
       <div class="nav__links" id="navLinks">
-        <a href="#hero" class="nav__link active" data-section="hero">Home</a>
+        <a href="#systems" class="nav__link" data-section="systems">Systems</a>
+        <a href="#agents" class="nav__link" data-section="agents">Agents</a>
         <a href="#experience" class="nav__link" data-section="experience">Experience</a>
-        <a href="#projects" class="nav__link" data-section="projects">Projects</a>
-        <a href="#education" class="nav__link" data-section="education">Education</a>
-        <a href="#services" class="nav__link" data-section="services">Services</a>
+        <a href="#casefiles" class="nav__link" data-section="casefiles">Case Files</a>
         <a href="#contact" class="nav__link" data-section="contact">Contact</a>
       </div>
-      <button class="nav__toggle" id="navToggle" aria-label="Toggle navigation menu">
-        <span></span><span></span><span></span>
-      </button>
+      <div class="nav__status">
+        <span class="dot"></span> OPEN TO FDE ROLES
+      </div>
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle navigation menu">menu</button>
     </div>
   </nav>
 
-  <!-- Mobile Bottom Navigation -->
-  <nav class="bottom-nav" id="bottomNav">
-    <a href="#hero" class="bottom-nav__item active" data-section="hero">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
-        <polyline points="9 22 9 12 15 12 15 22" />
-      </svg>
-      <span>Home</span>
-    </a>
-    <a href="#experience" class="bottom-nav__item" data-section="experience">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
-        <path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16" />
-      </svg>
-      <span>Work</span>
-    </a>
-    <a href="#projects" class="bottom-nav__item" data-section="projects">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <polyline points="16 18 22 12 16 6" />
-        <polyline points="8 6 2 12 8 18" />
-      </svg>
-      <span>Projects</span>
-    </a>
-    <a href="#contact" class="bottom-nav__item" data-section="contact">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-        <polyline points="22,6 12,13 2,6" />
-      </svg>
-      <span>Contact</span>
-    </a>
-  </nav>
+  <main>
+    <!-- ====== HERO ====== -->
+    <header class="hero" id="hero">
+      <div class="wrap">
+        <div class="hero__grid">
+          <div>
+            <div class="hero__badge reveal">
+              <span class="dot"></span> FORWARD-DEPLOYED ENGINEER
+            </div>
+            <h1 class="hero__title reveal">
+              I ship products with <em>fleets of agents</em>.
+            </h1>
+            <p class="hero__sub reveal">
+              Software engineer with <strong>4+ years shipping production mobile apps</strong> —
+              Google Home (100M+ downloads), Nykaa, a KMP fintech platform — now operating as a
+              forward-deployed engineer: I point <strong>orchestrated AI agent fleets</strong> at real
+              problems and deliver <strong>deployed, working systems</strong>, end-to-end, fast.
+            </p>
+            <div class="hero__actions reveal">
+              <a href="#systems" class="btn btn--solid">See the live systems <span class="arr">→</span></a>
+              <a href="#agents" class="btn">How I run the agents <span class="arr">→</span></a>
+            </div>
+            <div class="op-card reveal">
+              <img src="./assets/profile-opt.webp" alt="Vaibhav Raikwar"
+                onerror="this.onerror=null;this.src='./assets/profile-opt.png'">
+              <div>
+                <div class="op-card__name">Vaibhav Raikwar</div>
+                <div class="op-card__meta">Indore, India · remote · UTC+5:30</div>
+                <div class="op-card__tags">
+                  <span class="tag">Swift / Kotlin</span>
+                  <span class="tag">KMP</span>
+                  <span class="tag">TypeScript</span>
+                  <span class="tag">NestJS / Next.js</span>
+                </div>
+              </div>
+            </div>
+          </div>
 
-  <!-- ====== HERO SECTION ====== -->
-  <header class="hero" id="hero">
-    <div class="hero__container">
-      <div class="hero__badge reveal">
-        <span class="hero__badge-dot"></span>
-        Available for Hire
-      </div>
-
-      <div class="hero__avatar reveal">
-        <div class="hero__avatar-ring"></div>
-        <img src="/assets/profile.png" alt="Mobile Software Engineer" class="hero__avatar-img">
-        <div class="hero__avatar-badge">iOS / KMP</div>
-      </div>
-
-      <h1 class="hero__title reveal">
-        Mobile Software<br><span class="gradient-text">Engineer</span>
-      </h1>
-
-      <p class="hero__subtitle reveal" id="heroSubtitle"></p>
-
-      <a href="#contact" class="hero__cta magnetic reveal" id="heroCta">
-        <span class="hero__cta-text">Available for Remote Freelance &amp; Consulting</span>
-        <div class="hero__cta-glow"></div>
-      </a>
-
-      <div class="hero__quick-links reveal">
-        <a href="#projects" class="hero__quick-link" title="Projects">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
-            <line x1="8" y1="21" x2="16" y2="21" />
-            <line x1="12" y1="17" x2="12" y2="21" />
-          </svg>
-        </a>
-        <a href="#experience" class="hero__quick-link" title="Experience">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
-            <path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16" />
-          </svg>
-        </a>
-        <a href="#contact" class="hero__quick-link" title="Contact">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="4" />
-            <path d="M16 8v5a3 3 0 006 0v-1a10 10 0 10-3.92 7.94" />
-          </svg>
-        </a>
-      </div>
-
-      <div class="hero__stats reveal">
-        <div class="stat-card glass-card">
-          <span class="stat-card__number counter" data-target="5">0</span><span class="stat-card__plus">+</span>
-          <span class="stat-card__label">Years Exp.</span>
+          <div class="term reveal" role="img" aria-label="Terminal transcript of a typical agent-driven deployment">
+            <div class="term__bar">
+              <span class="term__dot"></span><span class="term__dot"></span><span class="term__dot term__dot--g"></span>
+              <span class="term__name">vaibhav@ops — zsh</span>
+            </div>
+            <div class="term__body" aria-hidden="true">
+              <div class="ln"><span class="p">❯</span> <span class="k">hermes plan "ticket platform, live DB"</span></div>
+              <div class="ln dim"># planner agent drafts phases → review gate</div>
+              <div class="ln"><span class="p">❯</span> spawn <span class="k">4 codex workers</span> --parallel</div>
+              <div class="ln dim"># cheap models: schema, API, UI, tests</div>
+              <div class="ln"><span class="p">❯</span> frontier agent: <span class="k">review + orchestrate</span></div>
+              <div class="ln dim"># 47 files written · 0 TODOs left</div>
+              <div class="ln ok">✓ build passing · types clean · lint clean</div>
+              <div class="ln ok">✓ deployed → tms-web-lime.vercel.app</div>
+              <div class="ln"><span class="p">❯</span> <span class="caret"></span></div>
+            </div>
+          </div>
         </div>
-        <div class="stat-card glass-card">
-          <span class="stat-card__number counter" data-target="10">0</span><span class="stat-card__plus">+</span>
-          <span class="stat-card__label">App Store</span>
-        </div>
-        <div class="stat-card glass-card">
-          <span class="stat-card__number counter" data-target="100">0</span><span class="stat-card__plus">M+</span>
-          <span class="stat-card__label">Users Reached</span>
+
+        <div class="stats reveal">
+          <div class="stat">
+            <div class="stat__n">5<span>↑</span></div>
+            <div class="stat__l">Live deployed products</div>
+          </div>
+          <div class="stat">
+            <div class="stat__n">4<span>+</span></div>
+            <div class="stat__l">Years shipping apps</div>
+          </div>
+          <div class="stat">
+            <div class="stat__n">100<span>M+</span></div>
+            <div class="stat__l">Users, largest app</div>
+          </div>
+          <div class="stat">
+            <div class="stat__n">2<span>×</span></div>
+            <div class="stat__l">Platforms led solo (iOS/Android)</div>
+          </div>
         </div>
       </div>
-    </div>
-  </header>
+    </header>
 
-  <!-- ====== KEY EXPERTISE ====== -->
-  <section class="expertise" id="expertise">
-    <div class="section__container">
-      <h2 class="section__label reveal">KEY EXPERTISE</h2>
-      <div class="expertise__grid">
-        <div class="expertise__card glass-card reveal">
-          <div class="expertise__icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
-              <line x1="12" y1="18" x2="12.01" y2="18" />
-            </svg>
-          </div>
-          <h3>Native iOS</h3>
-          <p>Swift, SwiftUI, Combine, Objective-C</p>
+    <!-- ====== LIVE SYSTEMS ====== -->
+    <section class="sec" id="systems">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <span class="kicker"><b>01</b> / SYSTEMS MANIFEST</span>
         </div>
-        <div class="expertise__card glass-card reveal">
-          <div class="expertise__icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <polygon points="12 2 2 7 12 12 22 7 12 2" />
-              <polyline points="2 17 12 22 22 17" />
-              <polyline points="2 12 12 17 22 12" />
-            </svg>
-          </div>
-          <h3>Cross-Platform</h3>
-          <p>Kotlin Multiplatform (KMP), Jetpack Compose, XML</p>
-        </div>
-        <div class="expertise__card glass-card reveal">
-          <div class="expertise__icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-            </svg>
-          </div>
-          <h3>SDK Design</h3>
-          <p>Custom Libraries &amp; Frameworks</p>
-        </div>
-        <div class="expertise__card glass-card reveal">
-          <div class="expertise__icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <polyline points="16 18 22 12 16 6" />
-              <polyline points="8 6 2 12 8 18" />
-            </svg>
-          </div>
-          <h3>Architecture</h3>
-          <p>MVVM, VIPER, Clean, Modular</p>
-        </div>
-        <div class="expertise__card glass-card reveal">
-          <div class="expertise__icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <rect x="4" y="4" width="16" height="16" rx="2" ry="2" />
-              <line x1="9" y1="9" x2="15" y2="9" />
-              <line x1="9" y1="12" x2="15" y2="12" />
-              <line x1="9" y1="15" x2="13" y2="15" />
-            </svg>
-          </div>
-          <h3>AI &amp; Agentic Workflows</h3>
-          <p>Harness, Claude, Codex, Ollama</p>
+        <h2 class="sec-title reveal">Deployed and running<span class="gradient-text">.</span></h2>
+        <p class="sec-sub reveal">Not mockups. Each system below is live, with a real database or API behind it —
+          built and shipped by orchestrated agent fleets, verified and maintained by me.</p>
+
+        <div class="manifest">
+          <a class="sys reveal" href="https://tms-web-lime.vercel.app/" target="_blank" rel="noopener">
+            <span class="sys__id">SYS-01</span>
+            <div class="sys__shot"><img src="./assets/shots/tms-thumb.webp" alt="TMS ticket management app"
+              loading="lazy" onerror="this.onerror=null;this.src='./assets/shots/tms.png'"></div>
+            <div>
+              <div class="sys__name">TMS — Ticket Management <span class="tag tag--live">LIVE</span></div>
+              <p class="sys__desc">Jira-class ticketing platform: NestJS API, Next.js frontend, Postgres + Prisma,
+                Docker compose. Turborepo monorepo with shared packages. API health-checked live on Render.</p>
+              <div class="sys__stack">
+                <span class="tag">NestJS</span><span class="tag">Next.js</span><span class="tag">Postgres</span><span class="tag">Prisma</span><span class="tag">Turborepo</span>
+              </div>
+            </div>
+            <span class="sys__go">tms-web-lime.vercel.app <span class="arr">↗</span></span>
+          </a>
+
+          <a class="sys reveal" href="https://unique-lo.vercel.app/" target="_blank" rel="noopener">
+            <span class="sys__id">SYS-02</span>
+            <div class="sys__shot"><img src="./assets/shots/uniquelo-thumb.webp" alt="UniqueLo storefront"
+              loading="lazy" onerror="this.onerror=null;this.src='./assets/shots/uniquelo.png'"></div>
+            <div>
+              <div class="sys__name">UniqueLo — Luxury Storefront <span class="tag tag--live">LIVE</span></div>
+              <p class="sys__desc">E-commerce flagship with a live Supabase database: full SQL schema + seed,
+                GSAP motion system, design-token pipeline, and an agent-maintainable admin surface so a
+                non-technical person can run the store.</p>
+              <div class="sys__stack">
+                <span class="tag">React 19</span><span class="tag">TypeScript</span><span class="tag">Supabase</span><span class="tag">Tailwind v4</span><span class="tag">GSAP</span>
+              </div>
+            </div>
+            <span class="sys__go">unique-lo.vercel.app <span class="arr">↗</span></span>
+          </a>
+
+          <a class="sys reveal" href="https://batting-demo.netlify.app/" target="_blank" rel="noopener">
+            <span class="sys__id">SYS-03</span>
+            <div class="sys__shot"><img src="./assets/shots/cricbet-thumb.webp" alt="CricBet live cricket odds"
+              loading="lazy" onerror="this.onerror=null;this.src='./assets/shots/cricbet.png'"></div>
+            <div>
+              <div class="sys__name">CricBet — Live Odds Engine <span class="tag tag--live">LIVE</span></div>
+              <p class="sys__desc">Real-time cricket betting demo: live scores, multiple betting markets, and
+                admin-controlled credit management — a full stateful trading surface, not a static page.</p>
+              <div class="sys__stack">
+                <span class="tag">React</span><span class="tag">Vite</span><span class="tag">Realtime</span>
+              </div>
+            </div>
+            <span class="sys__go">batting-demo.netlify.app <span class="arr">↗</span></span>
+          </a>
+
+          <a class="sys reveal" href="https://legal-demo.netlify.app/" target="_blank" rel="noopener">
+            <span class="sys__id">SYS-04</span>
+            <div class="sys__shot"><img src="./assets/shots/legal-thumb.webp" alt="Advocate chambers site"
+              loading="lazy" onerror="this.onerror=null;this.src='./assets/shots/legal.png'"></div>
+            <div>
+              <div class="sys__name">Chambers — Senior Advocate Site <span class="tag tag--demo">DEMO</span></div>
+              <p class="sys__desc">Professional chambers presence for a Supreme Court senior advocate:
+                practice areas, credentials, and consultation intake — designed and shipped agent-first.</p>
+              <div class="sys__stack">
+                <span class="tag">Vite SPA</span><span class="tag">Netlify</span>
+              </div>
+            </div>
+            <span class="sys__go">legal-demo.netlify.app <span class="arr">↗</span></span>
+          </a>
+
+          <a class="sys reveal" href="https://weddingdemo101.netlify.app/" target="_blank" rel="noopener">
+            <span class="sys__id">SYS-05</span>
+            <div class="sys__shot"><img src="./assets/shots/wedding-thumb.webp" alt="Luxury wedding photography site"
+              loading="lazy" onerror="this.onerror=null;this.src='./assets/shots/wedding.png'"></div>
+            <div>
+              <div class="sys__name">Atelier — Wedding Photography <span class="tag tag--demo">DEMO</span></div>
+              <p class="sys__desc">Luxury wedding-photography brand site: editorial galleries, portfolio
+                storytelling, and enquiry flows — a complete client-facing product built in hours with
+                an agent pipeline.</p>
+              <div class="sys__stack">
+                <span class="tag">Next.js</span><span class="tag">Netlify</span>
+              </div>
+            </div>
+            <span class="sys__go">weddingdemo101.netlify.app <span class="arr">↗</span></span>
+          </a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ====== EXPERIENCE TIMELINE ====== -->
-  <section class="experience" id="experience">
-    <div class="section__container">
-      <h2 class="section__title reveal">Professional <span class="gradient-text">Experience</span></h2>
-      <p class="section__subtitle reveal">A journey through e-commerce, trading, healthcare, and smart home innovation.
-      </p>
+    <!-- ====== AGENT OPERATIONS ====== -->
+    <section class="sec" id="agents">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <span class="kicker"><b>02</b> / AGENT OPERATIONS</span>
+        </div>
+        <h2 class="sec-title reveal">The method behind the speed<span class="gradient-text">.</span></h2>
+        <p class="sec-sub reveal">Every system above was built by a fleet, not a lone agent. Frontier models
+          plan, review, and steer; cost-efficient models do the mechanical work; I own architecture,
+          verification, and the deploy button.</p>
 
-      <div class="timeline">
-        <!-- Timeline item 0 -->
-        <div class="timeline__item reveal">
-          <div class="timeline__dot"></div>
-          <div class="timeline__content glass-card">
-            <div class="timeline__header">
-              <span class="timeline__date">Feb 2026 — Present</span>
+        <div class="matrix">
+          <div class="cell reveal">
+            <div class="cell__k">Orchestrate</div>
+            <div class="cell__h">Multi-agent fleet command</div>
+            <p class="cell__p">Spawn parallel subagents with isolated contexts — cheap coding workers
+              steered by frontier orchestrators — merging results through me as the review gate.
+              Subagents plan, build, and verify; nothing ships unverified.</p>
+            <div class="cell__tools">
+              <span class="tag">Hermes</span><span class="tag">Claude Code</span><span class="tag">Codex</span><span class="tag">Cline</span><span class="tag">OpenCode</span>
             </div>
-            <h3 class="timeline__role">Mobile Lead</h3>
-            <span class="timeline__company">Senpiper</span>
-            <p class="timeline__desc">Sole mobile lead for the iOS and Android apps of <strong>One Resource</strong>,
-              Senpiper's multi-tenant low-code platform for forms, workflows, and business process automation. Designed a
-              <strong>Kotlin Multiplatform</strong> architecture for the V2 form schema, unified fragmented codebases on
-              DRY/SOLID principles, and built <strong>Beat</strong> — a police-department app — from scratch on top of the
-              shared form engine.</p>
-            <div class="timeline__tags">
-              <span class="tag">KMP</span>
-              <span class="tag">iOS / Android</span>
-              <span class="tag">Low-Code</span>
-              <span class="tag">Firebase</span>
-              <span class="tag">AI / Agentic</span>
+          </div>
+          <div class="cell reveal">
+            <div class="cell__k">Harness</div>
+            <div class="cell__h">Harnesses built, not just used</div>
+            <p class="cell__p">Assembled my own harnesses and toolchains around model APIs — context
+              management, token discipline, retry loops, prompt scaffolds — and stress-tested every
+              major agent framework to know which to reach for.</p>
+            <div class="cell__tools">
+              <span class="tag">Custom harnesses</span><span class="tag">MCP</span><span class="tag">Ollama</span><span class="tag">vLLM</span>
+            </div>
+          </div>
+          <div class="cell reveal">
+            <div class="cell__k">Models</div>
+            <div class="cell__h">Local to frontier, driven cold</div>
+            <p class="cell__p">Drive local models (Ollama, ComfyUI for diffusion/image generation) and
+              frontier APIs side by side — routing work to the cheapest model that can hold the line,
+              escalating when quality demands it.</p>
+            <div class="cell__tools">
+              <span class="tag">Ollama</span><span class="tag">ComfyUI</span><span class="tag">Diffusion</span><span class="tag">Frontier APIs</span>
+            </div>
+          </div>
+          <div class="cell reveal">
+            <div class="cell__k">Evaluate</div>
+            <div class="cell__h">Try everything, keep what works</div>
+            <p class="cell__p">Every new repo, framework, and agent tool gets a real spin — from
+              early Auto-GPT clones in 2023 to today's harness landscape. The survivors become
+              load-bearing parts of my stack; the rest get documented and dropped.</p>
+            <div class="cell__tools">
+              <span class="tag">Auto-GPT '23</span><span class="tag">Bots</span><span class="tag">Repo takedowns</span>
             </div>
           </div>
         </div>
 
-        <!-- Timeline item 1 -->
-        <div class="timeline__item reveal">
-          <div class="timeline__dot"></div>
-          <div class="timeline__content glass-card">
-            <div class="timeline__header">
-              <span class="timeline__date">Jun 2025 — Jan 2026</span>
-            </div>
-            <h3 class="timeline__role">iOS Developer</h3>
-            <span class="timeline__company">Nykaa</span>
-            <p class="timeline__desc">Built and delivered features for a high-traffic consumer e-commerce iOS
-              application. Contributed to the gradual migration from <strong>UIKit to SwiftUI</strong>, implemented a
-              dual UI architecture using feature flags, and delivered the end-to-end payment flow for the Nike India iOS
-              app.</p>
-            <div class="timeline__tags">
-              <span class="tag">SwiftUI</span>
-              <span class="tag">Payments SDK</span>
-              <span class="tag">Firebase</span>
-              <span class="tag">Deep Links</span>
-            </div>
-          </div>
+        <div class="callout reveal">
+          <p><strong>Why this matters for your team:</strong> this is the forward-deployed pattern —
+            one engineer who can sit with the customer, scope the problem, then multiply themselves
+            through agent fleets to deliver a deployed system, not a slide deck. The five live products
+            above were built this way. So was the mobile platform work below.</p>
+          <p class="mono-note">orchestrate → steer → verify → deploy — every project, every time</p>
         </div>
-
-        <!-- Timeline item 2 -->
-        <div class="timeline__item reveal">
-          <div class="timeline__dot"></div>
-          <div class="timeline__content glass-card">
-            <div class="timeline__header">
-              <span class="timeline__date">Jun 2024 — Feb 2025</span>
-            </div>
-            <h3 class="timeline__role">KMP / Mobile Developer</h3>
-            <span class="timeline__company">Punch Trade (Market Pulse)</span>
-            <p class="timeline__desc">Drove development of a single-screen F&O and stock trading mobile application
-              across <strong>iOS and Android</strong>. Architected KMP / KMM solutions enabling shared business logic,
-              designed a KMP SDK for onboarding and KYC, and built a custom widget framework.</p>
-            <div class="timeline__tags">
-              <span class="tag">KMP</span>
-              <span class="tag">Android / iOS</span>
-              <span class="tag">A/B Testing</span>
-              <span class="tag">SDK Design</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Timeline item 3 -->
-        <div class="timeline__item reveal">
-          <div class="timeline__dot"></div>
-          <div class="timeline__content glass-card">
-            <div class="timeline__header">
-              <span class="timeline__date">Nov 2023 — May 2024</span>
-            </div>
-            <h3 class="timeline__role">iOS Developer</h3>
-            <span class="timeline__company">Yanthraa Information Systems</span>
-            <p class="timeline__desc">Led the migration of core modules from <strong>Objective-C to Swift</strong>,
-              modernizing the codebase. Integrated 20+ REST API endpoints, developed dynamic UI components for real-time
-              drug information, and resolved critical bugs improving overall app stability.</p>
-            <div class="timeline__tags">
-              <span class="tag">Swift</span>
-              <span class="tag">Objective-C</span>
-              <span class="tag">REST API</span>
-              <span class="tag">UI/UX</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Timeline item 4 -->
-        <div class="timeline__item reveal">
-          <div class="timeline__dot"></div>
-          <div class="timeline__content glass-card">
-            <div class="timeline__header">
-              <span class="timeline__date">May 2022 — Oct 2023</span>
-            </div>
-            <h3 class="timeline__role">iOS Developer</h3>
-            <span class="timeline__company">Raja Software Labs</span>
-            <p class="timeline__desc">Contributed to the <strong>Google Home iOS application</strong> with 100M+
-              downloads. Delivered 30+ user-facing features, optimized device setup flows for Nest and Chromecast, and
-              improved application performance by reducing feature response time by 20%.</p>
-            <div class="timeline__tags">
-              <span class="tag">Swift</span>
-              <span class="tag">Objective-C</span>
-              <span class="tag">MVVM / MVC</span>
-              <span class="tag">IoT</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="timeline__line"></div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ====== PROJECTS SHOWCASE ====== -->
-  <section class="projects" id="projects">
-    <div class="section__container">
-      <div class="section__header">
-        <h2 class="section__title reveal">Featured <span class="gradient-text">Projects</span></h2>
-        <span class="section__view-all reveal">Professional Work</span>
-      </div>
-      <p class="section__subtitle reveal">High-impact applications built and shipped across industries.</p>
-
-      <div class="projects__grid">
-        <!-- Project Card 0: Senpiper (One Resource) -->
-        <a href="/projects/senpiper.html" class="project-card glass-card tilt-card reveal" id="project-senpiper">
-          <div class="project-card__image">
-            <img src="/assets/senpiper.svg" alt="Senpiper One Resource App" loading="lazy">
-            <div class="project-card__overlay">
-              <span class="project-card__view">View Details →</span>
-            </div>
-          </div>
-          <div class="project-card__body">
-            <div class="project-card__tags">
-              <span class="tag tag--accent">KMP / Kotlin</span>
-              <span class="tag">Low-Code</span>
-            </div>
-            <h3 class="project-card__title">Senpiper (One Resource)</h3>
-            <p class="project-card__desc">Sole mobile lead on a multi-tenant low-code platform. Designed a KMP V2 form-schema architecture, unified fragmented codebases, and built the Beat police-department app from scratch.</p>
-            <div class="project-card__footer">
-              <span class="project-card__arrow">→</span>
-            </div>
-          </div>
-          <div class="project-card__glare"></div>
-        </a>
-
-        <!-- Project Card 1: Google Home & Nest -->
-        <a href="/projects/google-home-nest.html" class="project-card glass-card tilt-card reveal" id="project-google-home">
-          <div class="project-card__image">
-            <img src="/assets/google-home.png" alt="Google Home & Nest App" loading="lazy">
-            <div class="project-card__overlay">
-              <span class="project-card__view">View Details →</span>
-            </div>
-          </div>
-          <div class="project-card__body">
-            <div class="project-card__tags">
-              <span class="tag tag--accent">iOS / Swift</span>
-              <span class="tag">IoT</span>
-            </div>
-            <h3 class="project-card__title">Google Home &amp; Nest</h3>
-            <p class="project-card__desc">Contributed to the Google Home iOS app (100M+ downloads). Optimized device setup flows for Nest &amp; Chromecast, and delivered 30+ user-facing features.</p>
-            <div class="project-card__footer">
-              <span class="project-card__arrow">→</span>
-            </div>
-          </div>
-          <div class="project-card__glare"></div>
-        </a>
-
-        <!-- Project Card 2: inpharmD -->
-        <a href="/projects/inpharmd.html" class="project-card glass-card tilt-card reveal" id="project-inpharmd">
-          <div class="project-card__image">
-            <img src="/assets/inpharmd.png" alt="inpharmD Healthcare App" loading="lazy">
-            <div class="project-card__overlay">
-              <span class="project-card__view">View Details →</span>
-            </div>
-          </div>
-          <div class="project-card__body">
-            <div class="project-card__tags">
-              <span class="tag tag--accent">iOS / Swift</span>
-              <span class="tag">Healthcare</span>
-            </div>
-            <h3 class="project-card__title">inpharmD</h3>
-            <p class="project-card__desc">Led Objective-C to Swift migration, integrated 20+ REST APIs, and built dynamic UI components for real-time drug information delivery.</p>
-            <div class="project-card__footer">
-              <span class="project-card__arrow">→</span>
-            </div>
-          </div>
-          <div class="project-card__glare"></div>
-        </a>
-
-        <!-- Project Card 3: Punch (Market Pulse) -->
-        <a href="/projects/punch.html" class="project-card glass-card tilt-card reveal" id="project-punch">
-          <div class="project-card__image">
-            <img src="/assets/punch.png" alt="Punch Trading App" loading="lazy">
-            <div class="project-card__overlay">
-              <span class="project-card__view">View Details →</span>
-            </div>
-          </div>
-          <div class="project-card__body">
-            <div class="project-card__tags">
-              <span class="tag tag--accent">KMP / Kotlin</span>
-              <span class="tag">Trading</span>
-            </div>
-            <h3 class="project-card__title">Punch (Market Pulse)</h3>
-            <p class="project-card__desc">Drove development of a single-screen F&amp;O and stock trading app across iOS &amp; Android using Kotlin Multiplatform with shared business logic.</p>
-            <div class="project-card__footer">
-              <span class="project-card__arrow">→</span>
-            </div>
-          </div>
-          <div class="project-card__glare"></div>
-        </a>
-
-        <!-- Project Card 4: Nykaa (Beauty) -->
-        <a href="/projects/nykaa.html" class="project-card glass-card tilt-card reveal" id="project-nykaa">
-          <div class="project-card__image">
-            <img src="/assets/nykaa-beauty.png" alt="Nykaa Beauty App" loading="lazy">
-            <div class="project-card__overlay">
-              <span class="project-card__view">View Details →</span>
-            </div>
-          </div>
-          <div class="project-card__body">
-            <div class="project-card__tags">
-              <span class="tag tag--accent">SwiftUI</span>
-              <span class="tag">E-Commerce</span>
-            </div>
-            <h3 class="project-card__title">Nykaa (Beauty)</h3>
-            <p class="project-card__desc">Built features for a high-traffic consumer e-commerce iOS app. Migrated UIKit to SwiftUI and delivered the end-to-end payment flow.</p>
-            <div class="project-card__footer">
-              <span class="project-card__arrow">→</span>
-            </div>
-          </div>
-          <div class="project-card__glare"></div>
-        </a>
-
-        <!-- Project Card 5: Nykaa Fashion -->
-        <a href="/projects/nykaa-fashion.html" class="project-card glass-card tilt-card reveal" id="project-nykaa-fashion">
-          <div class="project-card__image">
-            <img src="/assets/nykaa-fashion.png" alt="Nykaa Fashion App" loading="lazy">
-            <div class="project-card__overlay">
-              <span class="project-card__view">View Details →</span>
-            </div>
-          </div>
-          <div class="project-card__body">
-            <div class="project-card__tags">
-              <span class="tag tag--accent">iOS / Swift</span>
-              <span class="tag">E-Commerce</span>
-            </div>
-            <h3 class="project-card__title">Nykaa Fashion</h3>
-            <p class="project-card__desc">Contributed to product discovery, shopping experiences, and user engagement flows for the Nykaa Fashion application.</p>
-            <div class="project-card__footer">
-              <span class="project-card__arrow">→</span>
-            </div>
-          </div>
-          <div class="project-card__glare"></div>
-        </a>
-
-        <!-- Project Card 6: Coachable -->
-        <a href="/projects/coachable.html" class="project-card glass-card tilt-card reveal" id="project-coachable">
-          <div class="project-card__image">
-            <img src="/assets/coachable.png" alt="Coachable Sports App" loading="lazy">
-            <div class="project-card__overlay">
-              <span class="project-card__view">View Details →</span>
-            </div>
-          </div>
-          <div class="project-card__body">
-            <div class="project-card__tags">
-              <span class="tag tag--accent">iOS</span>
-              <span class="tag">Sports / EdTech</span>
-            </div>
-            <h3 class="project-card__title">Coachable</h3>
-            <p class="project-card__desc">Developed athletic coaching platform features including video analysis tools, coach-to-athlete feedback loops, and performance tracking.</p>
-            <div class="project-card__footer">
-              <span class="project-card__arrow">→</span>
-            </div>
-          </div>
-          <div class="project-card__glare"></div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ====== EDUCATION & CERTS ====== -->
-  <section class="education" id="education">
-    <div class="section__container">
-      <h2 class="section__title reveal">Education &amp; <span class="gradient-text">Certifications</span></h2>
-
-      <div class="education__grid">
-        <div class="education__card glass-card reveal">
-          <div class="education__icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
-              <path d="M6 12v5c0 0 3 3 6 3s6-3 6-3v-5" />
-            </svg>
-          </div>
-          <div class="education__body">
-            <h3>B.Tech — Computer Science</h3>
-            <p class="education__school">AI &amp; Machine Learning Specialization</p>
-            <p class="education__detail">Focused on advanced algorithms, data structures, neural networks, and mobile
-              systems architecture. Senior thesis on on-device ML inference optimization for iOS.</p>
-            <div class="education__meta">
-              <span class="tag">AI Specialization</span>
-              <span class="tag">Distinction</span>
-            </div>
-          </div>
+    <!-- ====== EXPERIENCE ====== -->
+    <section class="sec" id="experience">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <span class="kicker"><b>03</b> / FIELD RECORD</span>
         </div>
+        <h2 class="sec-title reveal">Where I've shipped<span class="gradient-text">.</span></h2>
 
-        <div class="education__card glass-card reveal">
-          <div class="education__icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
-              <polyline points="14 2 14 8 20 8" />
-              <line x1="16" y1="13" x2="8" y2="13" />
-              <line x1="16" y1="17" x2="8" y2="17" />
-              <polyline points="10 9 9 9 8 9" />
-            </svg>
+        <div class="timeline">
+          <div class="job job--current reveal">
+            <div class="job__head">
+              <span class="job__role">Lead Mobile Engineer — iOS &amp; Android</span>
+              <span class="job__co">Senpiper</span>
+              <span class="job__when">Feb 2026 — present</span>
+            </div>
+            <p class="job__sum">Sole mobile lead for a multi-tenant low-code platform (forms, workflows,
+              process automation) serving government, consulting, and banking clients. Joined with zero
+              knowledge transfer and a codebase that wouldn't build — fixed it, unified it, and rebuilt
+              the architecture. Runs agentic workflows as the daily driver.</p>
+            <div class="job__hits">
+              <span class="tag tag--accent">KMP V2 form engine</span>
+              <span class="tag">Beat police app, 0→1</span>
+              <span class="tag">Design-token system</span>
+              <span class="tag">Realtime draft sync</span>
+              <span class="tag">Own App Store + Play releases</span>
+            </div>
           </div>
-          <div class="education__body">
-            <h3>Full-Stack Web Development</h3>
-            <p class="education__school">MERN Stack Certification</p>
-            <p class="education__detail">Comprehensive certification covering MongoDB, Express.js, React, and Node.js.
-              Built production-grade RESTful APIs, real-time applications with Socket.io, and responsive front-end
-              interfaces.</p>
-            <div class="education__meta">
-              <span class="tag">MERN Stack</span>
-              <span class="tag">Certified</span>
+
+          <div class="job reveal">
+            <div class="job__head">
+              <span class="job__role">iOS Developer</span>
+              <span class="job__co">Nykaa</span>
+              <span class="job__when">Jun 2025 — Feb 2026</span>
+            </div>
+            <p class="job__sum">High-traffic consumer e-commerce. Shipped features across listing, detail,
+              and search during a live UIKit→SwiftUI migration with dual-framework feature flags;
+              delivered the Nike India checkout UI end-to-end against strict brand compliance.</p>
+            <div class="job__hits">
+              <span class="tag tag--accent">UIKit↔SwiftUI dual arch</span>
+              <span class="tag">Nike checkout</span>
+              <span class="tag">Remote-config UI</span>
+              <span class="tag">Payments SDKs</span>
+            </div>
+          </div>
+
+          <div class="job reveal">
+            <div class="job__head">
+              <span class="job__role">KMP / Mobile Developer</span>
+              <span class="job__co">Punch Trade (Market Pulse)</span>
+              <span class="job__when">Jun 2024 — Feb 2025</span>
+            </div>
+            <p class="job__sum">Extended an Android F&amp;O trading app to iOS via Kotlin Multiplatform.
+              Built the SwiftUI layer of an 8-step onboarding &amp; KYC SDK (Aadhaar, PAN, DigiLocker,
+              e-sign, banking), cutting onboarding time 24%; resizable realtime widget framework.</p>
+            <div class="job__hits">
+              <span class="tag tag--accent">KMP SDK design</span>
+              <span class="tag">KYC onboarding −24%</span>
+              <span class="tag">Realtime widgets</span>
+              <span class="tag">A/B-tested 15+ features</span>
+            </div>
+          </div>
+
+          <div class="job reveal">
+            <div class="job__head">
+              <span class="job__role">iOS Developer</span>
+              <span class="job__co">Yanthraa (InpharmD)</span>
+              <span class="job__when">Nov 2023 — May 2024</span>
+            </div>
+            <p class="job__sum">Sole iOS developer on a live 4.9-rated pharma app. Led the
+              Objective-C→Swift migration, integrated 20+ REST APIs, resolved 30+ production issues.</p>
+            <div class="job__hits">
+              <span class="tag tag--accent">ObjC→Swift migration</span>
+              <span class="tag">20+ APIs</span>
+              <span class="tag">4.9★ live app</span>
+            </div>
+          </div>
+
+          <div class="job reveal">
+            <div class="job__head">
+              <span class="job__role">iOS Developer — Raja Software Labs</span>
+              <span class="job__co">Google Home</span>
+              <span class="job__when">May 2022 — Oct 2023</span>
+            </div>
+            <p class="job__sum">20-engineer team on a 100M+-download flagship. Owned OBE device-setup
+              flows with JSON/Proto-driven dynamic screens; shipped CameraZilla behind feature flags;
+              resolved 100+ bugs in a hybrid ObjC/Swift codebase.</p>
+            <div class="job__hits">
+              <span class="tag tag--accent">100M+ downloads</span>
+              <span class="tag">Schema-driven UI</span>
+              <span class="tag">CameraZilla 0→1</span>
+              <span class="tag">Nest / Chromecast</span>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ====== SERVICES ====== -->
-  <section class="services" id="services">
-    <div class="section__container">
-      <div class="services__badge reveal">EXPERT SERVICES</div>
-      <h2 class="section__title reveal">Full-Cycle App <span class="gradient-text">Specialist</span></h2>
-      <p class="section__subtitle reveal">Engineering high-performance mobile experiences with cutting-edge
-        architectures and seamless integrations.</p>
-
-      <div class="services__grid">
-        <div class="service-card glass-card reveal">
-          <div class="service-card__icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
-              <line x1="12" y1="18" x2="12.01" y2="18" />
-            </svg>
-          </div>
-          <h3>End-to-End iOS Development</h3>
-          <p>Full-funnel development from initial wireframes to App Store deployment. Native and cross-platform
-            excellence.</p>
-          <ul class="service-card__list">
-            <li>Swift &amp; SwiftUI</li>
-            <li>UIKit Legacy Support</li>
-          </ul>
+    <!-- ====== CASE FILES ====== -->
+    <section class="sec" id="casefiles">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <span class="kicker"><b>04</b> / CASE FILES</span>
         </div>
+        <h2 class="sec-title reveal">Mobile work, documented<span class="gradient-text">.</span></h2>
+        <p class="sec-sub reveal">Deep-dives on the apps behind the field record — the challenge, the
+          architecture, and what shipped.</p>
 
-        <div class="service-card glass-card reveal">
-          <div class="service-card__icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <polygon points="12 2 2 7 12 12 22 7 12 2" />
-              <polyline points="2 17 12 22 22 17" />
-              <polyline points="2 12 12 17 22 12" />
-            </svg>
-          </div>
-          <h3>Cross-Platform KMP Strategy</h3>
-          <p>Designing shared business logic architectures that maximize code reuse while preserving native UX fidelity.
-          </p>
-          <ul class="service-card__list">
-            <li>Kotlin Multiplatform</li>
-            <li>Shared Modules</li>
-          </ul>
-        </div>
-
-        <div class="service-card glass-card reveal">
-          <div class="service-card__icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-            </svg>
-          </div>
-          <h3>SDK Integration &amp; Architecture</h3>
-          <p>Solving complex third-party library challenges, custom wrappers, and low-level hardware bridge
-            implementations.</p>
-          <ul class="service-card__list">
-            <li>Payment Gateways</li>
-            <li>Biometrics &amp; Security</li>
-          </ul>
-        </div>
-
-        <div class="service-card glass-card reveal">
-          <div class="service-card__icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <circle cx="12" cy="12" r="10" />
-              <line x1="2" y1="12" x2="22" y2="12" />
-              <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" />
-            </svg>
-          </div>
-          <h3>Technical Consulting</h3>
-          <p>Architecture audits, performance optimization, and strategic roadmap planning for scaling mobile products.
-          </p>
-          <ul class="service-card__list">
-            <li>Performance Audits</li>
-            <li>CI/CD Pipelines</li>
-          </ul>
+        <div class="cases">
+          <a class="case case--wide reveal" href="./projects/senpiper.html">
+            <div class="case__shot"><img src="./assets/senpiper.svg" alt="Senpiper One Resource" loading="lazy"></div>
+            <div class="case__body">
+              <div class="case__t">Senpiper One Resource — KMP Form Engine</div>
+              <p class="case__d">Sole mobile lead on a multi-tenant low-code platform. Designed the KMP V2
+                schema architecture, built the Beat police app from scratch, and run agentic AI workflows
+                (Claude, Codex, Ollama) as part of the delivery loop.</p>
+              <div class="case__tags">
+                <span class="tag tag--accent">KMP</span><span class="tag">SwiftUI</span><span class="tag">Compose</span><span class="tag">Feature flags</span>
+              </div>
+              <span class="case__go">read case file →</span>
+            </div>
+          </a>
+          <a class="case reveal" href="./projects/punch.html">
+            <div class="case__shot"><img src="./assets/punch.png" alt="Punch trading app" loading="lazy"></div>
+            <div class="case__body">
+              <div class="case__t">Punch — F&amp;O Trading</div>
+              <p class="case__d">Single-screen options trading across iOS + Android. KMP onboarding SDK,
+                realtime widget framework, 70%+ shared logic.</p>
+              <div class="case__tags"><span class="tag tag--accent">KMP</span><span class="tag">SwiftUI</span></div>
+              <span class="case__go">read case file →</span>
+            </div>
+          </a>
+          <a class="case reveal" href="./projects/google-home-nest.html">
+            <div class="case__shot"><img src="./assets/google-home.png" alt="Google Home and Nest" loading="lazy"></div>
+            <div class="case__body">
+              <div class="case__t">Google Home &amp; Nest</div>
+              <p class="case__d">100M+ downloads. OBE setup flows, schema-driven screens, 30+ shipped
+                features across Nest and Chromecast.</p>
+              <div class="case__tags"><span class="tag tag--accent">ObjC/Swift</span><span class="tag">IoT</span></div>
+              <span class="case__go">read case file →</span>
+            </div>
+          </a>
+          <a class="case reveal" href="./projects/inpharmd.html">
+            <div class="case__shot"><img src="./assets/inpharmd.png" alt="InpharmD app" loading="lazy"></div>
+            <div class="case__body">
+              <div class="case__t">InpharmD — Drug Info</div>
+              <p class="case__d">4.9★ live pharma app as sole iOS dev. ObjC→Swift migration, 20+ APIs,
+                clinical decision-support UI.</p>
+              <div class="case__tags"><span class="tag tag--accent">Swift</span><span class="tag">Healthcare</span></div>
+              <span class="case__go">read case file →</span>
+            </div>
+          </a>
+          <a class="case reveal" href="./projects/nykaa.html">
+            <div class="case__shot"><img src="./assets/nykaa-beauty.png" alt="Nykaa beauty app" loading="lazy"></div>
+            <div class="case__body">
+              <div class="case__t">Nykaa — E-commerce</div>
+              <p class="case__d">Live UIKit→SwiftUI migration, Nike India checkout, remote-config-driven
+                UI and deep links.</p>
+              <div class="case__tags"><span class="tag tag--accent">SwiftUI</span><span class="tag">Payments</span></div>
+              <span class="case__go">read case file →</span>
+            </div>
+          </a>
+          <a class="case reveal" href="./projects/nykaa-fashion.html">
+            <div class="case__shot"><img src="./assets/nykaa-fashion.png" alt="Nykaa Fashion app" loading="lazy"></div>
+            <div class="case__body">
+              <div class="case__t">Nykaa Fashion</div>
+              <p class="case__d">Product discovery, curated collections, and engagement flows for a
+                major fashion marketplace.</p>
+              <div class="case__tags"><span class="tag tag--accent">iOS</span><span class="tag">E-commerce</span></div>
+              <span class="case__go">read case file →</span>
+            </div>
+          </a>
+          <a class="case reveal" href="./projects/coachable.html">
+            <div class="case__shot"><img src="./assets/coachable.png" alt="Coachable sports app" loading="lazy"></div>
+            <div class="case__body">
+              <div class="case__t">Coachable — Sports</div>
+              <p class="case__d">Video analysis tools, coach-athlete feedback loops, performance
+                tracking for a coaching platform.</p>
+              <div class="case__tags"><span class="tag tag--accent">iOS</span><span class="tag">EdTech</span></div>
+              <span class="case__go">read case file →</span>
+            </div>
+          </a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ====== CONTACT ====== -->
-  <section class="contact" id="contact">
-    <div class="section__container">
-      <div class="contact__wrapper">
-        <div class="contact__info reveal">
-          <h2 class="section__title">Let's Build <span class="gradient-text">Together</span></h2>
-          <p class="section__subtitle">Ready to start your next mobile project? Drop a message below.</p>
-          <div class="contact__details">
-            <div class="contact__detail">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                <polyline points="22,6 12,13 2,6" />
-              </svg>
-              <span>raikwar.vaibhav95@gmail.com</span>
-            </div>
-            <div class="contact__detail">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path
-                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
-                </path>
-              </svg>
-              <span>+91 7000530821</span>
-            </div>
-            <div class="contact__detail">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
-                <circle cx="12" cy="10" r="3" />
-              </svg>
-              <span>Remote — Worldwide</span>
-            </div>
+    <!-- ====== EDUCATION ====== -->
+    <section class="sec" id="education">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <span class="kicker"><b>05</b> / TRAINING</span>
+        </div>
+        <h2 class="sec-title reveal">Education<span class="gradient-text">.</span></h2>
+        <div class="edu">
+          <div class="edu__card reveal">
+            <div class="edu__deg">B.Tech — Computer Science, AI Specialisation</div>
+            <div class="edu__sch">Medicaps University, Indore · 2016 — 2021</div>
+            <p class="edu__d">Graduated with Distinction. Algorithms, data structures, neural networks,
+              and mobile systems architecture.</p>
+          </div>
+          <div class="edu__card reveal">
+            <div class="edu__deg">Full-Stack Web Development (MERN)</div>
+            <div class="edu__sch">Acciojobs, Indore · 2021 — 2022</div>
+            <p class="edu__d">DSA, React, Redux, Node.js, Express, MongoDB. Top ranks in multiple
+              contests.</p>
           </div>
         </div>
-
-        <form class="contact__form glass-card reveal" id="contactForm">
-          <div class="form-group">
-            <label for="fullName">FULL NAME</label>
-            <input type="text" id="fullName" name="fullName" placeholder="John Doe" required>
-          </div>
-          <div class="form-group">
-            <label for="email">EMAIL ADDRESS</label>
-            <input type="email" id="email" name="email" placeholder="john@example.com" required>
-          </div>
-          <div class="form-group">
-            <label for="category">PROJECT CATEGORY</label>
-            <select id="category" name="category">
-              <option value="">Select a category</option>
-              <option value="ios">iOS App Development</option>
-              <option value="kmp">Cross-Platform (KMP)</option>
-              <option value="sdk">SDK / Library Integration</option>
-              <option value="consulting">Technical Consulting</option>
-              <option value="other">Other</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="message">MESSAGE</label>
-            <textarea id="message" name="message" rows="4" placeholder="Describe your project goals..."></textarea>
-          </div>
-          <button type="submit" class="contact__submit magnetic" id="contactSubmit">
-            <span>Send via WhatsApp</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-          </button>
-          <a href="#" class="contact__email-fallback" id="emailFallback" style="display:block;text-align:center;margin-top:14px;color:var(--accent);font-size:0.85rem;font-weight:500;transition:color 0.3s;">Or send via Email →</a>
-        </form>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ====== FOOTER ====== -->
+    <!-- ====== CONTACT ====== -->
+    <section class="sec" id="contact">
+      <div class="wrap">
+        <div class="contact__grid">
+          <div>
+            <div class="sec-head reveal">
+              <span class="kicker"><b>06</b> / CONTACT</span>
+            </div>
+            <h2 class="sec-title reveal">Deploy me on your problem<span class="gradient-text">.</span></h2>
+            <p class="sec-sub reveal">Forward-deployed work, agent-fleet builds, mobile leadership, or
+              hard migration problems. Indore-based, remote-ready, fast.</p>
+          </div>
+          <div class="contact__channels reveal">
+            <a class="chan" href="mailto:raikwar.vaibhav95@gmail.com">
+              <span class="chan__k">email</span> raikwar.vaibhav95@gmail.com
+            </a>
+            <a class="chan" href="https://wa.me/917000530821" target="_blank" rel="noopener">
+              <span class="chan__k">phone</span> +91 70005 30821
+            </a>
+            <a class="chan" href="https://github.com/vaibhav19972" target="_blank" rel="noopener">
+              <span class="chan__k">github</span> github.com/vaibhav19972
+            </a>
+            <a class="chan" href="https://www.linkedin.com/in/codenext" target="_blank" rel="noopener">
+              <span class="chan__k">linkedin</span> linkedin.com/in/codenext
+            </a>
+            <a class="chan" href="./Vaibhav_Raikwar_Resume.pdf">
+              <span class="chan__k">resume</span> Download PDF ↓
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
   <footer class="footer">
-    <div class="section__container">
-      <div class="footer__content">
-        <div class="footer__brand">
-          <span class="nav__logo-icon">⬡</span>
-          <span>Vaibhav Raikwar</span>
-        </div>
-        <p class="footer__copy">&copy; 2026 Vaibhav Raikwar. Crafted with precision.</p>
-        <div class="footer__links">
-          <a href="https://github.com/vaibhav19972" target="_blank" rel="noopener" class="footer__social"
-            title="GitHub">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-              <path
-                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-            </svg>
-          </a>
-          <a href="https://www.linkedin.com/in/codenext" target="_blank" rel="noopener" class="footer__social"
-            title="LinkedIn">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-              <path
-                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-            </svg>
-          </a>
-          <a href="https://twitter.com" target="_blank" rel="noopener" class="footer__social" title="Twitter">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-              <path
-                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-            </svg>
-          </a>
-        </div>
+    <div class="wrap footer__row">
+      <div class="footer__note">
+        <span class="kicker"><b>~/</b> vaibhav.raikwar</span><br>
+        © 2026 · Built by orchestrating agent fleets, verified by hand.
+      </div>
+      <div class="footer__note">
+        <a href="https://github.com/vaibhav19972">github</a> ·
+        <a href="https://www.linkedin.com/in/codenext">linkedin</a> ·
+        <a href="mailto:raikwar.vaibhav95@gmail.com">email</a>
       </div>
     </div>
   </footer>
 
-  <script type="module" src="/main.js"></script>
+  <script type="module" src="./main.js"></script>
 </body>
 
 </html>
